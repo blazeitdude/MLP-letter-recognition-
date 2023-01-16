@@ -61,23 +61,17 @@ build CMakeFiles/logic.dir/sources/Dataset.cpp.o: CXX_COMPILER__logic_Debug /Use
   OBJECT_DIR = CMakeFiles/logic.dir
   OBJECT_FILE_DIR = CMakeFiles/logic.dir/sources
 
-build CMakeFiles/logic.dir/sources/Neuron.cpp.o: CXX_COMPILER__logic_Debug /Users/ldione/Desktop/MLP/src/logic/sources/Neuron.cpp || cmake_object_order_depends_target_logic
-  DEP_FILE = CMakeFiles/logic.dir/sources/Neuron.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu++17
-  OBJECT_DIR = CMakeFiles/logic.dir
-  OBJECT_FILE_DIR = CMakeFiles/logic.dir/sources
-
 build CMakeFiles/logic.dir/sources/NeuralNetwork.cpp.o: CXX_COMPILER__logic_Debug /Users/ldione/Desktop/MLP/src/logic/sources/NeuralNetwork.cpp || cmake_object_order_depends_target_logic
   DEP_FILE = CMakeFiles/logic.dir/sources/NeuralNetwork.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu++17
   OBJECT_DIR = CMakeFiles/logic.dir
   OBJECT_FILE_DIR = CMakeFiles/logic.dir/sources
 
-build CMakeFiles/logic.dir/includes/Weights.cpp.o: CXX_COMPILER__logic_Debug /Users/ldione/Desktop/MLP/src/logic/includes/Weights.cpp || cmake_object_order_depends_target_logic
-  DEP_FILE = CMakeFiles/logic.dir/includes/Weights.cpp.o.d
+build CMakeFiles/logic.dir/sources/Weights.cpp.o: CXX_COMPILER__logic_Debug /Users/ldione/Desktop/MLP/src/logic/sources/Weights.cpp || cmake_object_order_depends_target_logic
+  DEP_FILE = CMakeFiles/logic.dir/sources/Weights.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu++17
   OBJECT_DIR = CMakeFiles/logic.dir
-  OBJECT_FILE_DIR = CMakeFiles/logic.dir/includes
+  OBJECT_FILE_DIR = CMakeFiles/logic.dir/sources
 
 
 # =============================================================================
@@ -87,7 +81,7 @@ build CMakeFiles/logic.dir/includes/Weights.cpp.o: CXX_COMPILER__logic_Debug /Us
 #############################################
 # Link the executable logic
 
-build logic: CXX_EXECUTABLE_LINKER__logic_Debug CMakeFiles/logic.dir/sources/main.cpp.o CMakeFiles/logic.dir/sources/Dataset.cpp.o CMakeFiles/logic.dir/sources/Neuron.cpp.o CMakeFiles/logic.dir/sources/NeuralNetwork.cpp.o CMakeFiles/logic.dir/includes/Weights.cpp.o
+build logic: CXX_EXECUTABLE_LINKER__logic_Debug CMakeFiles/logic.dir/sources/main.cpp.o CMakeFiles/logic.dir/sources/Dataset.cpp.o CMakeFiles/logic.dir/sources/NeuralNetwork.cpp.o CMakeFiles/logic.dir/sources/Weights.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6
   OBJECT_DIR = CMakeFiles/logic.dir
   POST_BUILD = :

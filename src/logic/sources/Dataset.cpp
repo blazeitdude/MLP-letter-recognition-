@@ -63,6 +63,7 @@ void s21::Dataset::read_csv_dataset(char *filepath, bool is_train) {
 		}
 		amount++;
 		this->size = len_of_arr;
+		fin.close();
 	}
 //	std::cout << "PRE" << std::endl;
 //	this->DEV_PRINT();
@@ -70,6 +71,16 @@ void s21::Dataset::read_csv_dataset(char *filepath, bool is_train) {
 //	std::cout << "AFTER" << std::endl;
 //	this->DEV_PRINT();
 	this->size = len_of_arr;
+}
+
+void s21::Dataset::clean() {
+	for (int i = 0; i < amount; i++) {
+		delete(dataset.at(i));
+	}
+	amount = 0;
+	size = 0;
+	min = 0;
+	max = 0;
 }
 
 v_intp &s21::Dataset::getDataSet() {

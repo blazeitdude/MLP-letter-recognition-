@@ -3,3 +3,8 @@
 3	893	1673790680000000000	CMakeFiles/logic.dir/Dataset.cpp.o	bcead02badc1f976
 3	756	1673790679000000000	CMakeFiles/logic.dir/main.cpp.o	d9925f53860222ad
 5	453	1673788132000000000	CMakeFiles/logic.dir/neuron.cpp.o	a38a0dd088c665be
+3	1620	1673895594000000000	CMakeFiles/logic.dir/sources/Weights.cpp.o	9fa730db98ff3974
+0	1627	1673895594000000000	CMakeFiles/logic.dir/sources/main.cpp.o	ca4265380a517bfd
+1	1652	1673895594000000000	CMakeFiles/logic.dir/sources/NeuralNetwork.cpp.o	e7be8da51cf9c6a3
+1	1693	1673895594000000000	CMakeFiles/logic.dir/sources/Dataset.cpp.o	fd446ea942929ad2
+1693	1969	1673895595000000000	logic	c750862955c22b06

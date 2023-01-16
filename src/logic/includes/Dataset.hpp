@@ -11,8 +11,10 @@
 #include <cstring>
 #define STD_DSET	"../../datasets/emnist-letters/emnist-letters-test.csv"
 //#define STD_TRAINT_DSET	"../../datasets/emnist-letters/emnist-letters-train.csv"
+#define STD_DSET "/Users/ldione/Desktop/MLP/datasets/emnist-letters/emnist-letters-test.csv"
 #define STD_TRAINT_DSET	"/Users/ldione/Desktop/MLP/datasets/emnist-letters/emnist-letters-train.csv"
 #define TRAIN_MODE	1
+#define TEST_MODE 0
 typedef std::vector<double *>				v_intp;
 typedef std::vector<int>				v_int;
 typedef std::vector<std::string>		v_str;
@@ -33,6 +35,7 @@ namespace s21 {
 
 	public:
 		void read_csv_dataset(char *filepath, bool is_train);
+		void clean( void );
 		v_intp&				getDataSet(void );
 		bool				getCondition( void );
 		int 				getAmount( void );

@@ -35,9 +35,43 @@ namespace s21 {
 		}
 	}
 
+	void	s21::Weights::multi_T(const Weights &matrix, const double *multiplier, int size_m, double *result) {
+		if (matrix.col != size_m)
+			throw std::runtime_error("it is impossible to multiply the matrix of weights by a vector");
+		for (int i = 0; i < matrix.col; i++) {
+			double	tmp = 0;
+			for (int j = 0; j < matrix.row; j++) {
+				tmp += matrix.matrix[j][i] * multiplier[j];
+			}
+			result[i] = tmp;
+		}
+	}
+
 	void	s21::Weights::sumVector(double *a, const double *b, int size) {
 		for (int i = 0; i < size; i++) {
 			a[i] += b[i];
 		}
+	}
+
+	double&	s21::Weights::operator()(int i, int j) {
+		return (this->matrix[i][j]);
+	}
+
+	std::ostream&	operator<<(std::ostream &stream, const Weights &m) {
+		for (int i = 0; i < m.row; ++i) {
+			for (int j = 0; j < m.col; j++) {
+				stream << m.matrix[i][j] << " ";
+			}
+		}
+		return stream;
+	}
+
+	std::istream&	operator>>(std::istream &stream, Weights &m) {
+		for (int i = 0; i < m.row; ++i) {
+			for (int j = 0; j < m.col; j++) {
+				stream >> m.matrix[i][j];
+			}
+		}
+		return stream;
 	}
 } // s21
