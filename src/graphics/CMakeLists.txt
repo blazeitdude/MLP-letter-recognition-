@@ -22,6 +22,9 @@ set(PROJECT_SOURCES
         mainwindow.h
         paintwidgets.h
         paintwidgets.cpp
+        drawingwindow.cpp
+        drawingwindow.h
+        drawingwindow.ui
         mainwindow.ui
         ${TS_FILES}
 )
