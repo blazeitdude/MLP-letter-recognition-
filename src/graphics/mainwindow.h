@@ -5,6 +5,8 @@
 #include <QPainter>
 #include <QWidget>
 #include "paintwidgets.h"
+#include <QMdiArea>
+#include "drawingwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,9 +25,11 @@ protected:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QPaintWidget *widget;
+    drawingwindow   *win;
 };
 
 

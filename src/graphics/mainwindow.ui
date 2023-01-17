@@ -27,16 +27,18 @@
      <string>Выход</string>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>230</y>
-      <width>411</width>
-      <height>271</height>
+      <x>330</x>
+      <y>730</y>
+      <width>100</width>
+      <height>32</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout"/>
+    <property name="text">
+     <string>SubWindow</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

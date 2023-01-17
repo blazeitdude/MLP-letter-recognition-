@@ -1,60 +1,87 @@
 #include <QPainter>
 #include "paintwidgets.h"
 
-QPaintWidget::QPaintWidget(){
-    this->resize(1000, 600);
-    this->move(100, 100);
-    this->setWindowTitle("Рисовашка");
 
-    QPalette pal; //этот объект для того чтобы задать фон/определить цвета
-    pal.setColor(QPalette::Window, QColor(100, 200, 150));
-    this->setAutoFillBackground(true);
-    this->setPalette(pal);
-    this->setMouseTracking(true);
-    f = 0;
+QPaintWidget::QPaintWidget(QWidget *parent) : QWidget{parent}, _stop(false), _draw(true){
+    _pen = QPen(Qt::black, _penWidth, Qt::SolidLine, Qt::RoundCap);
 }
 
 void    QPaintWidget::paintEvent(QPaintEvent *event){
-    QPainter    p(this);
+    QPainter p(this);
+    p.drawPixmap(0, 0, _pixmap);
+    this->update();
+}
 
-    p.setPen(QPen(Qt::green, Qt::SolidLine));
-    for (int i = 1; i < vector.size(); ++i){
-        if (vector[i - 1].k == 1){
-            continue;
-        }
-        p.drawLine(vector[i - 1].qp.x(), vector[i - 1].qp.y(), vector[i].qp.x(), vector[i].qp.y());
+void    QPaintWidget::resizeEvent(QResizeEvent *event){
+    auto newRectangle = _pixmap.rect().united(rect());
+    if (!(newRectangle == _pixmap.rect())){
+        QPixmap newPixmap{newRectangle.size()};
+        QPainter newPainter{&newPixmap};
+        newPainter.fillRect(newPixmap.rect(), Qt::white);
+        newPainter.drawPixmap(0, 0, _pixmap);
+        _pixmap = newPixmap;
+    }
+}
+
+void    QPaintWidget::clear() {
+    _pixmap.fill(Qt::white);
+    this->clearMask();
+}
+
+void    QPaintWidget::draw(const QPoint &position, Qt::MouseButton click){
+    if (_stop == false && _draw){
+        QPainter painter{&_pixmap};
+        painter.setPen(_pen);
+        painter.drawLine(_lastposition, position);
+        _lastposition = position;
+        update();
+    }
+}
+
+void    QPaintWidget::mousePressEvent(QMouseEvent *event){
+    if (event->button() == Qt::RightButton && _stop == false){
+        clear();
+        _draw = false;
+        _lastposition = event->pos();
+    }
+    else if (event->button() == Qt::LeftButton){
+        _draw = true;
+        _lastposition = event->pos();
+        draw(event->pos(), event->button());
     }
 }
 
 void    QPaintWidget::mouseMoveEvent(QMouseEvent *event){
-    if (!f)
-        return ;
-    this->pos = event->pos();
-    coords qp1;
-    qp1.qp = this->pos;
-    qp1.k = 0;
-    vector.append(qp1);
-    this->update();
+    draw(event->pos(), event->button());
 }
 
-void    QPaintWidget::mousePressEvent(QMouseEvent *e){
-    if (e->button() == Qt::LeftButton)
-        f = 1;
+QImage QPaintWidget::drawingImage(){
+    int width = 1;
+    const int   drawingAreaHeight = 512;
+    const int   drawingAreaWidth = 512;
+    const int   pixelSize = 28;
+
+    QImage      image(drawingAreaWidth, drawingAreaHeight, QImage::Format_Grayscale8);
+    QImage      padImage(512 * width, drawingAreaHeight * width, QImage::Format_Grayscale8);
+    QPainter    painter{&padImage};
+
+    this->render(&painter);
+    image = padImage.copy(width, width, drawingAreaWidth, drawingAreaHeight);
+    image = image.scaled(QSize(pixelSize, pixelSize), Qt::IgnoreAspectRatio);
+    return image;
 }
 
-void    QPaintWidget::mouseReleaseEvent(QMouseEvent *e){
-    if (e->button() == Qt::LeftButton)
-    {
-        f = 0;
-        if (vector.size() > 0)
-            vector[vector.size() - 1].k = 1;
-    }
-    if (e->button() == Qt::RightButton)
-    {
-        if (vector.size() > 0)
-            vector.remove(vector.size() - 1);
-        if (vector.size() > 0)
-            vector[vector.size() - 1].k = 1;
-        this->update();
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

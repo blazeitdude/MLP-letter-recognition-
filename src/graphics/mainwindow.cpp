@@ -3,21 +3,19 @@
 #include <QLabel>
 #include <QPainter>
 #include <paintwidgets.h>
+#include <QGridLayout>
+#include "drawingwindow.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    QPainter painter(this);
     ui->setupUi(this);
-    widget = new QPaintWidget();
-    ui->verticalLayout->addWidget(widget);
 }
 
 MainWindow::~MainWindow()
 {
-    widget->deleteLater();
     delete ui;
 }
 
@@ -36,3 +34,14 @@ void MainWindow::changeEvent(QEvent *e){
             break;
         }
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+//    this->hide();
+//    drawingwindow win;
+//    win.setModal(true);
+//    win.exec();
+    win = new drawingwindow(this);
+    win->show();
+}
+
