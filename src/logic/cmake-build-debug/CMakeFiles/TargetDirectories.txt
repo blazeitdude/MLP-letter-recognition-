@@ -1,0 +1,3 @@
+/Users/ldione/Desktop/MLP/src/logic/cmake-build-debug/CMakeFiles/logic.dir
+/Users/ldione/Desktop/MLP/src/logic/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ldione/Desktop/MLP/src/logic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
