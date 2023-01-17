@@ -23,16 +23,17 @@ void s21::Dataset::read_csv_dataset(char *filepath, bool is_train) {
 	std::string 	buff_line;
 	int 			num_buff = 0;
 	int 			len = 0;
-	int 			len_of_arr = 0;
+	int 			len_of_arr = 784;
 
 	if (is_train)
 		this->is_train = true;
 	else
 		this->is_train = false;
-	while (std::getline(fin, buff_line)) {
+	std::getline(fin, buff_line);
+	len_of_arr = getLen(buff_line);
+	do {
 		nums = 0;
 		len = 0;
-
 		if (this->is_train) {
 			while (buff_line[len] != ',') {
 				num_buff *= 10;
@@ -42,8 +43,6 @@ void s21::Dataset::read_csv_dataset(char *filepath, bool is_train) {
 		}
 		num_buff = 0;
 		len++;
-		if (this->amount == 0)
-			len_of_arr = getLen(buff_line);
 		this->dataset.push_back(new double[len_of_arr]);
 		while (buff_line[len] != '\0') {
 			if (buff_line[len] == ',') {
@@ -62,14 +61,10 @@ void s21::Dataset::read_csv_dataset(char *filepath, bool is_train) {
 			len++;
 		}
 		amount++;
-		this->size = len_of_arr;
-		fin.close();
 	}
-//	std::cout << "PRE" << std::endl;
-//	this->DEV_PRINT();
+	while(std::getline(fin, buff_line));
+	fin.close();
 	this->normalize();
-//	std::cout << "AFTER" << std::endl;
-//	this->DEV_PRINT();
 	this->size = len_of_arr;
 }
 
@@ -119,4 +114,8 @@ v_int&	s21::Dataset::getMap() {
 
 int	s21::Dataset::getSize() {
 	return (this->size);
+}
+
+double*	s21::Dataset::getEx(int pos) {
+	return (dataset.at(pos));
 }

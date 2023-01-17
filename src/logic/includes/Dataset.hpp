@@ -25,6 +25,15 @@ typedef std::vector<std::string>		v_str;
 namespace s21 {
 	class Dataset {
 	private:
+//		v_intp	dataset;
+//		bool	is_train;
+//		int		amount;
+//		v_int	map;
+//		int		size;
+//		int		min;
+//		int 	max;
+
+	public:
 		v_intp	dataset;
 		bool	is_train;
 		int		amount;
@@ -32,10 +41,9 @@ namespace s21 {
 		int		size;
 		int		min;
 		int 	max;
-
-	public:
 		void read_csv_dataset(char *filepath, bool is_train);
 		void clean( void );
+		double				*getEx(int pos);
 		v_intp&				getDataSet(void );
 		bool				getCondition( void );
 		int 				getAmount( void );

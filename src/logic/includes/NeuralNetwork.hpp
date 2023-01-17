@@ -4,6 +4,10 @@
 
 #ifndef LOGIC_NEURALNETWORK_HPP
 #define LOGIC_NEURALNETWORK_HPP
+#define GREEN 	"\033[0;32m"
+#define RED		"\033[0;31m"
+#define RESET	"\033[0m"
+
 
 #include <cmath>
 #include <ctime>
@@ -15,17 +19,21 @@ namespace s21 {
 
 	class NeuralNetwork {
 	private:
-
-		int		layers;
-		int 	*size;
-		Weights	*matrix;
-		Dataset	*dataset;
-		double	**bios;
-		double 	**neuron, **neuron_err;
-		double 	*neuron_bios;
+//		int		layers;
+//		int 	*size;
+//		Weights	*matrix;
+//		double	**bios;
+//		double 	**neuron, **neuron_err;
+//		double 	*neuron_bios;
 
 
 	public:
+		int		layers;
+		int 	*size;
+		Weights	*matrix;
+		double	**bios;
+		double 	**neuron, **neuron_err;
+		double 	*neuron_bios;
 		void	activate_func(double *value, int len);
 		void	derivative(double *value, int len);
 		double 	derivative(double value);
