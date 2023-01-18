@@ -5,6 +5,7 @@
 #include <paintwidgets.h>
 #include <QGridLayout>
 #include "drawingwindow.h"
+#include <QObject>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("MultiLayer Perceptron");
 }
 
 MainWindow::~MainWindow()
@@ -43,5 +45,28 @@ void MainWindow::on_pushButton_2_clicked()
 //    win.exec();
     win = new drawingwindow(this);
     win->show();
+}
+
+
+void MainWindow::on_radioButton_clicked()
+{
+
+}
+
+
+void MainWindow::on_radioButton_2_clicked()
+{
+
+}
+
+
+void MainWindow::on_progressBar_valueChanged(int value)
+{
+
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+
 }
 

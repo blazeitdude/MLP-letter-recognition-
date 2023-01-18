@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "paintwidgets.h"
+#include <QLabel>
 
 namespace Ui {
 class drawingwindow;
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::drawingwindow *ui;
     QPaintWidget *widget;
+    QLabel      *label;
 };
 
 #endif // DRAWINGWINDOW_H

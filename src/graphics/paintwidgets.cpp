@@ -55,7 +55,7 @@ void    QPaintWidget::mouseMoveEvent(QMouseEvent *event){
     draw(event->pos(), event->button());
 }
 
-QImage QPaintWidget::drawingImage(){
+QImage QPaintWidget::getImage(){
     int width = 1;
     const int   drawingAreaHeight = 512;
     const int   drawingAreaWidth = 512;
@@ -69,6 +69,10 @@ QImage QPaintWidget::drawingImage(){
     image = padImage.copy(width, width, drawingAreaWidth, drawingAreaHeight);
     image = image.scaled(QSize(pixelSize, pixelSize), Qt::IgnoreAspectRatio);
     return image;
+}
+
+void    QPaintWidget::setImage(QImage img){
+    _pixmap = QPixmap::fromImage(img);
 }
 
 

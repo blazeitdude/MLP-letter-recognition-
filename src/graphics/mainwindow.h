@@ -7,6 +7,7 @@
 #include "paintwidgets.h"
 #include <QMdiArea>
 #include "drawingwindow.h"
+#include <QProgressBar>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,9 +28,16 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_radioButton_clicked();
+
+    void on_radioButton_2_clicked();
+
+    void on_progressBar_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     drawingwindow   *win;
+    QProgressBar    *bar;
 };
 
 

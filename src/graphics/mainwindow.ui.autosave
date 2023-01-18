@@ -92,14 +92,27 @@
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>400</y>
+      <x>260</x>
+      <y>410</y>
       <width>118</width>
       <height>23</height>
      </rect>
     </property>
     <property name="value">
      <number>24</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>470</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>иди нахуй</string>
     </property>
    </widget>
   </widget>
