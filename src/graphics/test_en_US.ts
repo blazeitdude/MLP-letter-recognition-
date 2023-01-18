@@ -10,16 +10,41 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="27"/>
-        <source>Выход</source>
+        <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="40"/>
-        <source>SubWindow</source>
+        <source>Draw letter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="55"/>
+        <location filename="mainwindow.ui" line="53"/>
+        <source>Matrix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="66"/>
+        <source>Graph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="79"/>
+        <source>Load image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="105"/>
+        <source>Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="118"/>
+        <source>Start learning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="133"/>
         <source>ttttt</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32,13 +57,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="drawingwindow.ui" line="37"/>
-        <source>Выход</source>
+        <location filename="drawingwindow.ui" line="26"/>
+        <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="drawingwindow.ui" line="50"/>
-        <source>Назад</source>
+        <location filename="drawingwindow.ui" line="39"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="drawingwindow.cpp" line="32"/>
+        <source>Save as BMP image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="drawingwindow.cpp" line="32"/>
+        <source>BMP file (*.bmp)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

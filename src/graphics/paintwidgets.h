@@ -42,7 +42,7 @@ public:
     void    draw(const QPoint &position, Qt::MouseButton click);
     void    setImage(QImage mg);
     void    setLock(bool lock);
-    QImage  drawingImage();
+    QImage  getImage();
 
 private:
     static const int _penWidth = 20;
