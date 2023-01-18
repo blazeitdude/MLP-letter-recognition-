@@ -26,9 +26,9 @@ namespace s21 {
 	void	s21::Weights::multi(const Weights &matrix, const double *multiplier, int size_m, double *result) {
 		if (matrix.col != size_m)
 			throw std::runtime_error("it is impossible to multiply the matrix of weights by a vector");
-		for (int i = 0; i < matrix.row; i++) {
+		for (int i = 0; i < matrix.row; ++i) {
 			double tmp = 0;
-			for (int j = 0; j < matrix.col; j++) {
+			for (int j = 0; j < matrix.col; ++j) {
 				tmp += matrix.matrix[i][j] * multiplier[j];
 			}
 			result[i] = tmp;
@@ -36,11 +36,11 @@ namespace s21 {
 	}
 
 	void	s21::Weights::multi_T(const Weights &matrix, const double *multiplier, int size_m, double *result) {
-		if (matrix.col != size_m)
+		if (matrix.row != size_m)
 			throw std::runtime_error("it is impossible to multiply the matrix of weights by a vector");
-		for (int i = 0; i < matrix.col; i++) {
+		for (int i = 0; i < matrix.col; ++i) {
 			double	tmp = 0;
-			for (int j = 0; j < matrix.row; j++) {
+			for (int j = 0; j < matrix.row; ++j) {
 				tmp += matrix.matrix[j][i] * multiplier[j];
 			}
 			result[i] = tmp;

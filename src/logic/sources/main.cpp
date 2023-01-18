@@ -21,18 +21,26 @@ int main() {
 			auto start = high_resolution_clock::now();
 			dataset.read_csv_dataset(STD_TRAINT_DSET, TRAIN_MODE);
 			ex = dataset.getAmount();
+			std::cout << "learning started\n";
 			while (ra / ex * 100 < 100) {
 				ra = 0;
 				for (int i = 0; i < ex; ++i) {
-					nn.set_input(dataset.getDataSet().at(i));
+					nn.set_input(dataset.getEx(i));
 					right = dataset.getMap().at(i);
 					predict = nn.forwardFeed();
-					if (predict != right) {
+					if (predict != right - 1) {
+						std::cout << RED << "predict != right! " << '\t' << predict << " != " << right << RESET << std::endl;
 						nn.backPropogation(right);
 						nn.update_weights(0.15 * exp(-epoch / 20.));
 					}
-					else
+					else {
+						std::cout << GREEN
+						<< "--------------------------"
+						<< "right!"
+						<< "--------------------------"
+						<< RESET << std::endl;
 						ra++;
+					}
 				}
 				if (ra  > maxra)
 					maxra = ra;
