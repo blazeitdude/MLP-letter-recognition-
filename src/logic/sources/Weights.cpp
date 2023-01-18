@@ -4,6 +4,7 @@
 
 #include <stdexcept>
 #include "../includes/Weights.hpp"
+#include <iostream>
 
 namespace s21 {
 	void	s21::Weights::init(int row, int col) {
@@ -13,11 +14,16 @@ namespace s21 {
 		for (int i = 0; i < this->row; i++) {
 			this->matrix[i] = new double[col];
 		}
+
+		for (int i = 0; i < this->row; i++) {
+			for (int j = 0; j < this->col; j++)
+				this->matrix[i][j] = 0;
+		}
 	}
 
 	void	s21::Weights::randomize() {
 		for (int i = 0; i < this->row; i++) {
-			for (int j; j < this->col; j++) {
+			for (int j = 0; j < this->col; j++) {
 				this->matrix[i][j] = ((rand() % 100) * 0.03 / (this->row + 35));
 			}
 		}

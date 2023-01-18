@@ -24,12 +24,12 @@ int main() {
 			std::cout << "learning started\n";
 			while (ra / ex * 100 < 100) {
 				ra = 0;
-				for (int i = 0; i < ex; ++i) {
+				for (int i = 0; i < ex; i++) {
 					nn.set_input(dataset.getEx(i));
 					right = dataset.getMap().at(i);
 					predict = nn.forwardFeed();
 					if (predict != right - 1) {
-						std::cout << RED << "predict != right! " << '\t' << predict << " != " << right << RESET << std::endl;
+						std::cout << RED << "predict != right! " << '\t' << predict + 1 << " != " << right << RESET << std::endl;
 						nn.backPropogation(right);
 						nn.update_weights(0.15 * exp(-epoch / 20.));
 					}
@@ -46,9 +46,10 @@ int main() {
 					maxra = ra;
 				auto stop = high_resolution_clock::now();
 				auto duration = duration_cast<seconds>(stop - start);
-				std::cout << "right answers " << ra / ex * 100 << '\t' << "maxra: " << maxra / ex * 100 << '\t' << "epoch " << epoch << "time: " << duration.count() << std::endl;
-				if (epoch == 20)
-					break;
+				std::cout << "right answers " << ra / ex * 100 << '\t' << "maxra: " << maxra / ex * 100 << '\t' << "epoch: " << epoch << " time: " << duration.count() << "s" <<	 std::endl;
+				epoch++;
+//				if (epoch == 20)
+//					break;
 			}
 			auto end = duration_cast<seconds>(high_resolution_clock::now() - start);
 			std::cout << "time: " << end.count() << std::endl;

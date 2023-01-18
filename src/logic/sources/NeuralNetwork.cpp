@@ -26,19 +26,22 @@ namespace s21 {
 
 	void s21::NeuralNetwork::init() {
 		srand(time(NULL));
-		this->layers = 5;
+		this->layers = 4;
 		this->size = new int[layers];
-		size[0] = 784;
-		//size[0] = dataset->getSize();
-		size[1] = 256;
-		size[2] = 100;
-		size[3] = 30; // надо изменить
+//		size[0] = 784;
+//		size[1] = 100;
+//		size[2] = 50;
+//		size[3] = 26;
+//		//size[0] = dataset->getSize();
+		size[1] = 100;
+		size[2] = 50;
+		size[3] = 35; // надо изменить
 		size[4] = 26;
 		this->bios = new double *[layers - 1];
 		matrix = new Weights[layers - 1];
 		for (int i = 0; i < layers - 1; i++) {
 			matrix[i].init(size[i + 1], size[i]);
-			matrix->randomize();
+			matrix[i].randomize();
 			bios[i] = new double[size[i + 1]];
 			for (int j = 0; j < size[i + 1]; j++) {
 				bios[i][j] = ((rand() % 50)) * 0.06  / (size[i] + 15);
@@ -64,12 +67,14 @@ namespace s21 {
 
 		for (int i = 1; i < size[layers - 1]; i++) {
 			tmp = value[i];
+//			std::cout << tmp << " ";
 			if (tmp > max) {
 				prediction = i;
 				max = tmp;
 			}
-			return prediction;
 		}
+			//std::cout << std::endl;
+			return prediction;
 	}
 
 	double	s21::NeuralNetwork::forwardFeed() {
@@ -97,11 +102,7 @@ namespace s21 {
 	void s21::NeuralNetwork::backPropogation(double expect) {
 		for (int i = 0; i < size[layers - 1]; i++) {
 			if (i != int(expect)) {
-//				std::cout << "PRE";
-//				std::cout << "\tneuron_err = " << neuron_err[layers - 1][i];
 				neuron_err[layers - 1][i] = -neuron[layers - 1][i] * derivative(neuron[layers - 1][i]);
-//				std::cout << "\tAFTER ";
-//				std::cout << "neuron_err = " << neuron_err[layers - 1][i] << std::endl;
 			} else
 				neuron_err[layers - 1][i] = (1.0 - neuron[layers - 1][i]) * derivative(neuron[layers - 1][i]);
 		}
@@ -115,9 +116,8 @@ namespace s21 {
 	void s21::NeuralNetwork::update_weights(double lr) {
 		for (int i = 0; i < layers - 1; ++i) {
 			for (int j = 0; j < size[i + 1]; ++j) {
-				for (int k = 0; k < size[i]; ++k) {
+				for (int k = 0; k < size[i]; ++k)
 					matrix[i](j, k) += neuron[i][k] * neuron_err[i + 1][j] * lr;
-				}
 			}
 		}
 		for (int i = 0; i < layers - 1; i++) {
