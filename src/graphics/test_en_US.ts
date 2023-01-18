@@ -34,7 +34,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="117"/>
+        <location filename="mainwindow.ui" line="105"/>
+        <source>Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="118"/>
+        <source>Start learning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="133"/>
         <source>ttttt</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54,6 +64,16 @@
     <message>
         <location filename="drawingwindow.ui" line="39"/>
         <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="drawingwindow.cpp" line="32"/>
+        <source>Save as BMP image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="drawingwindow.cpp" line="32"/>
+        <source>BMP file (*.bmp)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

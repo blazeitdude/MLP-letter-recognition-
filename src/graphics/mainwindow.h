@@ -34,6 +34,8 @@ private slots:
 
     void on_progressBar_valueChanged(int value);
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     drawingwindow   *win;

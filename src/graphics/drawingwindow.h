@@ -16,6 +16,7 @@ class drawingwindow : public QDialog
 public:
     explicit drawingwindow(QWidget *parent = nullptr);
     ~drawingwindow();
+    void savePaint();
 
 private slots:
     void on_pushButton_clicked();
