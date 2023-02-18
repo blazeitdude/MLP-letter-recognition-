@@ -1,81 +1,24 @@
-#include <iostream>
-#include "../includes/Dataset.hpp"
-#include <chrono>
-#include "../includes/NeuralNetwork.hpp"
+//
+// Created by Louvenia Dione on 2/3/23.
+//
+#include "MatrixNet.hpp"
+#include "Emnist_sample.hpp"
+#include "GraphNet.hpp"
 
-using namespace std::chrono;
+int	main(void) {
+	s21::NetInterface*	nn = new s21::GraphNet();
 
-int main() {
-	s21::Dataset	dataset;
-	s21::NeuralNetwork	nn;
-	double ra = 0, right, predict, maxra = 0;
-	int epoch = 0;
-	bool study, repeat = true;
-	int ex;
-
-	nn.init(); // с этим чето сделать надо
-	while (repeat) {
-		std::cout << "turn on the training mode?[0][1]\n";
-		std::cin >> study;
-		if (study) {
-			auto start = high_resolution_clock::now();
-			dataset.read_csv_dataset(STD_TRAINT_DSET, TRAIN_MODE);
-			ex = dataset.getAmount();
-			std::cout << "learning started\n";
-			while (ra / ex * 100 < 100) {
-				ra = 0;
-				for (int i = 0; i < ex; i++) {
-					nn.set_input(dataset.getEx(i));
-					right = dataset.getMap().at(i);
-					predict = nn.forwardFeed();
-					if (predict != right - 1) {
-						std::cout << RED << "predict != right! " << '\t' << predict + 1 << " != " << right << RESET << std::endl;
-						nn.backPropogation(right);
-						nn.update_weights(0.15 * exp(-epoch / 20.));
-					}
-					else {
-						std::cout << GREEN
-						<< "--------------------------"
-						<< "right!"
-						<< "--------------------------"
-						<< RESET << std::endl;
-						ra++;
-					}
-				}
-				if (ra  > maxra)
-					maxra = ra;
-				auto stop = high_resolution_clock::now();
-				auto duration = duration_cast<seconds>(stop - start);
-				std::cout << "right answers " << ra / ex * 100 << '\t' << "maxra: " << maxra / ex * 100 << '\t' << "epoch: " << epoch << " time: " << duration.count() << "s" <<	 std::endl;
-				epoch++;
-//				if (epoch == 20)
-//					break;
-			}
-			auto end = duration_cast<seconds>(high_resolution_clock::now() - start);
-			std::cout << "time: " << end.count() << std::endl;
-			nn.save_weights();
-		}
-		else {
-			nn.downloads_weights();
-		}
-
-		std::cout << "Start?[0][1]\n";
-		bool inp;
-		std::cin >> inp;
-		if (inp) {
-			dataset.clean();
-			dataset.read_csv_dataset(STD_DSET, TEST_MODE);
-			ra = 0;
-			ex = dataset.getAmount();
-
-			for (int i = 0; i < ex; i++) {
-				nn.set_input(dataset.getDataSet().at(i));
-				predict = nn.forwardFeed();
-				std::cout << "I think that's -> " << (char) predict + 39 << std::endl;
-			}
-		}
-	}
-//	for (int i = 0; i < dataset.getAmount(); i++) {
-//		std::cout << map.at(i) << std::endl;
-//	}
+	nn->setLayers(nn->getLayersConfig(2));
+//	nn->trainMode("/Users/ldione/Desktop/mlp_2.0/emnist-letters-train.csv", 10);
+//	nn->saveExperience("/Users/ldione/Desktop/mlp_2.0/exp_2.txt");
+//	nn->testMode("/Users/ldione/Desktop/mlp_2.0/emnist-letters-test.csv", 1);
+	nn->readExperience("/Users/ldione/Desktop/mlp_2.0/exp_2.txt");
+//	nn->saveExperience("/Users/ldione/Desktop/mlp_2.0/exp_test.txt");
+	s21::Info info = nn->testMode("/Users/ldione/Desktop/mlp_2.0/emnist-letters-test.csv", 0.1);
+	std::cout << "----------------------------------------------------\n";
+	std::cout << "accuracy: " << info.accuracy << std::endl
+	<< "precision: " << info.precision << std::endl
+	<< "recall: " << info.recall << std::endl
+	<< "f_measure: " << info.f_measure << std::endl
+	<< "time: " << info.ed_time << std::endl;
 }
