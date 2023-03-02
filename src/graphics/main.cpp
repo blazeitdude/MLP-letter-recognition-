@@ -1,27 +1,19 @@
 #include "mainwindow.h"
 
 #include <QApplication>
-#include <QLocale>
-#include <QTranslator>
-#include <QLabel>
-#include <QPainter>
-
-
+#include <QGraphicsEffect>
+#include <paintscene.hpp>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-    QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        const QString baseName = "test_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
-            a.installTranslator(&translator);
-            break;
-        }
-    }
-    MainWindow w;
-    w.show();
+	MainWindow w;
+	int idFont = QFontDatabase::addApplicationFont("/Users/ldione/Desktop/MLP_Design/resources/MountainsofChristmas-Regular.ttf");
+		QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
+		QFont IC(itimCyrillic);
+		IC.setPixelSize(16);
+		w.setFont(IC);
+		w.setFixedSize(1440, 1024);
+	w.show();
     return a.exec();
 }

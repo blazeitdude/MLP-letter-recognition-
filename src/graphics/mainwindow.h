@@ -2,12 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPainter>
-#include <QWidget>
-#include "paintwidgets.h"
-#include <QMdiArea>
-#include "drawingwindow.h"
-#include <QProgressBar>
+#include <secondwindow.hpp>
+#include <QMessageBox>
+#include <QEvent>
+#include <QFontDatabase>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,28 +19,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected:
-    void changeEvent(QEvent *e);
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void on_radioButton_clicked();
-
-    void on_radioButton_2_clicked();
-
-    void on_progressBar_valueChanged(int value);
-
-    void on_pushButton_4_clicked();
+	void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    drawingwindow   *win;
-    QProgressBar    *bar;
 };
-
-
-
-
 #endif // MAINWINDOW_H
