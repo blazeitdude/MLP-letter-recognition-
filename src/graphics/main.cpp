@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 	MainWindow w;
-	int idFont = QFontDatabase::addApplicationFont("/Users/ldione/Desktop/MLP_Design/resources/MountainsofChristmas-Regular.ttf");
+//	int idFont = QFontDatabase::addApplicationFont("/Users/ldione/Desktop/MLP_Design/resources/MountainsofChristmas-Regular.ttf");
+    int idFont = QFontDatabase::addApplicationFont("/Users/otttisss/Desktop/perceptron/src/graphics/resources/MountainsofChristmas-Regular.ttf");
 		QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
 		QFont IC(itimCyrillic);
 		IC.setPixelSize(16);

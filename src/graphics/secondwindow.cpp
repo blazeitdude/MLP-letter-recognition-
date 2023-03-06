@@ -8,12 +8,12 @@ secondWindow::secondWindow(QWidget *parent) :
 {
 
 	ui->setupUi(this);
-	int idFont = QFontDatabase::addApplicationFont("/Users/ldione/Desktop/MLP_Design/resources/MountainsofChristmas-Regular.ttf");
-		QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
-		QFont IC(itimCyrillic);
-		IC.setPixelSize(16);
-		this->setFont(IC);
-	this->setFont(IC);
+    int idFont = QFontDatabase::addApplicationFont("/Users/otttisss/Desktop/perceptron/src/graphics/resources/MountainsofChristmas-Regular.ttf");
+        QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
+        QFont IC(itimCyrillic);
+        IC.setPixelSize(16);
+        this->setFont(IC);
+    this->setFont(IC);
 	paint = new PaintScene(this);
 	ui->gridLayout->addWidget(paint);
 	ui->horizontalSlider->setTickInterval(1);
