@@ -1,6 +1,7 @@
 .PHONY: all install uninstall dist clean dvi tests
 
-SOURCES = logic/* graphics/* controller/*
+SOURCES = logic/*.cpp graphics/*.cpp controller/*.cpp
+HEADERS = logic/headers/*.hpp graphics/headers/*.hpp graphics/headers/*.h controller/*.hpp
 
 build: 
 		cmake -S . -B ./build
@@ -18,7 +19,7 @@ clean:
 		rm -rf ./build
 
 style:
-		clang-format -n -verbose -style=Google $(SOURCES)
+		clang-format -n -style=Google $(SOURCES) $(HEADERS)
 
 dist:	clean
 		tar -czf MLP.tgz ./*

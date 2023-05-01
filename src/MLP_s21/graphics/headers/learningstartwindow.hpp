@@ -9,22 +9,21 @@ class LearningStartWindow;
 }
 
 namespace s21 {
-class LearningStartWindow : public QDialog
-{
-	Q_OBJECT
+class LearningStartWindow : public QDialog {
+  Q_OBJECT
 
-public:
-	explicit LearningStartWindow(QWidget *parent = nullptr);
-	~LearningStartWindow();
-    void setAccuracy(const double accuracy);
-    void setPrecision(const double precision);
-    void setRecall(const double recall);
-    void setMeasure(const double measure);
-    void setTime(const double time);
+ public:
+  explicit LearningStartWindow(QWidget *parent = nullptr);
+  ~LearningStartWindow();
+  void setAccuracy(const double accuracy);
+  void setPrecision(const double precision);
+  void setRecall(const double recall);
+  void setMeasure(const double measure);
+  void setTime(const double time);
 
-private:
-	Ui::LearningStartWindow *ui;
+ private:
+  Ui::LearningStartWindow *ui;
 };
-}
+}  // namespace s21
 
-#endif // LEARNINGSTARTWINDOW_HPP
+#endif  // LEARNINGSTARTWINDOW_HPP

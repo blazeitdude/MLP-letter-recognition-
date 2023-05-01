@@ -1,32 +1,34 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include "secondwindow.hpp"
-#include <QMessageBox>
 #include <QEvent>
 #include <QFontDatabase>
+#include <QMainWindow>
+#include <QMessageBox>
+
+#include "secondwindow.hpp"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+class MainWindow;
+}
 QT_END_NAMESPACE
 
 namespace s21 {
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
+class MainWindow : public QMainWindow {
+  Q_OBJECT
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+ public:
+  MainWindow(QWidget *parent = nullptr);
+  ~MainWindow();
 
-private slots:
+ private slots:
 
-	void on_pushButton_clicked();
+  void on_pushButton_clicked();
 
-private:
-    Ui::MainWindow *ui;
-    secondWindow *win;
+ private:
+  Ui::MainWindow *ui;
+  secondWindow *win;
 };
-}
-#endif // MAINWINDOW_H
+}  // namespace s21
+#endif  // MAINWINDOW_H
