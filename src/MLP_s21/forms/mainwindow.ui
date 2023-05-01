@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Devanagari MT</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Multilayer Perceptron</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="pony-icon-26.jpg"/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #313131</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>440</y>
+      <width>820</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Mountains of Christmas</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 816px;
+height: 89px;
+left: 284px;
+top: 418px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 89px;
+/* identical to box height */
+
+letter-spacing: 0.24em;
+</string>
+    </property>
+    <property name="text">
+     <string>Multilayer Perceptron</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>590</y>
+      <width>250</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">position: absolute;
+width: 248px;
+height: 62.35px;
+left: 528px;
+top: 735.65px;
+
+border: 3px solid #FE259B;
+border-radius: 117px;
+
+position: absolute;
+width: 156px;
+height: 68px;
+left: 574px;
+top: 721px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 89px;
+text-align: center;
+letter-spacing: 0.09em;
+
+color: #FE259B;
+</string>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

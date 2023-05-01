@@ -1,5 +1,0 @@
-/Users/otttisss/Desktop/perceptron/src/build-graphics-Qt_6_4_2_for_macOS-Debug/CMakeFiles/MLP_Design.dir
-/Users/otttisss/Desktop/perceptron/src/build-graphics-Qt_6_4_2_for_macOS-Debug/CMakeFiles/edit_cache.dir
-/Users/otttisss/Desktop/perceptron/src/build-graphics-Qt_6_4_2_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
-/Users/otttisss/Desktop/perceptron/src/build-graphics-Qt_6_4_2_for_macOS-Debug/CMakeFiles/MLP_Design_autogen_timestamp_deps.dir
-/Users/otttisss/Desktop/perceptron/src/build-graphics-Qt_6_4_2_for_macOS-Debug/CMakeFiles/MLP_Design_autogen.dir

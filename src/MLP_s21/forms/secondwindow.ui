@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>secondWindow</class>
+ <widget class="QWidget" name="secondWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="saveImageButton">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>870</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>Save Image</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="predictLabel">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>670</y>
+     <width>131</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>27</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Prediction</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_learn">
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>670</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>Start Learning</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="uploadWeightsButton">
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>920</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>Upload Weights</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveWeightsButton">
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>830</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>Save Weights</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="uploadImageButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>870</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>Upload Image</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>30</y>
+     <width>512</width>
+     <height>512</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout"/>
+  </widget>
+  <widget class="QPushButton" name="pushButton_test">
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>750</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>Test</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="settingsPushButton">
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>600</y>
+     <width>283</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 253px;
+height: 46px;
+left: 115px;
+top: 766px;
+
+font-family: 'Mountains of Christmas';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+letter-spacing: 0.24em;
+
+color: #FFFFFF</string>
+   </property>
+   <property name="text">
+    <string>SETTINGS</string>
+   </property>
+  </widget>
+  <widget class="s21::PaintScene" name="draw_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>150</y>
+     <width>512</width>
+     <height>512</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>s21::PaintScene</class>
+   <extends>QWidget</extends>
+   <header>../graphics/headers/paintscene.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

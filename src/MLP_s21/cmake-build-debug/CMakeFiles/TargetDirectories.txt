@@ -1,0 +1,5 @@
+/Users/otttisss/Desktop/MLP_s21/cmake-build-debug/CMakeFiles/MLP_s21.dir
+/Users/otttisss/Desktop/MLP_s21/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/otttisss/Desktop/MLP_s21/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/otttisss/Desktop/MLP_s21/cmake-build-debug/CMakeFiles/MLP_s21_autogen_timestamp_deps.dir
+/Users/otttisss/Desktop/MLP_s21/cmake-build-debug/CMakeFiles/MLP_s21_autogen.dir
