@@ -1,42 +1,46 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'learningstartwindow.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.3)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
 #include "../../../graphics/headers/learningstartwindow.hpp"
-#include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'learningstartwindow.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.2.3. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+namespace {
 struct qt_meta_stringdata_s21__LearningStartWindow_t {
-    const uint offsetsAndSize[2];
+    uint offsetsAndSizes[2];
     char stringdata0[25];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(offsetof(qt_meta_stringdata_s21__LearningStartWindow_t, stringdata0) + ofs), len 
-static const qt_meta_stringdata_s21__LearningStartWindow_t qt_meta_stringdata_s21__LearningStartWindow = {
+    uint(sizeof(qt_meta_stringdata_s21__LearningStartWindow_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_s21__LearningStartWindow_t qt_meta_stringdata_s21__LearningStartWindow = {
     {
-QT_MOC_LITERAL(0, 24) // "s21::LearningStartWindow"
-
+        QT_MOC_LITERAL(0, 24)   // "s21::LearningStartWindow"
     },
     "s21::LearningStartWindow"
 };
 #undef QT_MOC_LITERAL
+} // unnamed namespace
 
-static const uint qt_meta_data_s21__LearningStartWindow[] = {
+Q_CONSTINIT static const uint qt_meta_data_s21__LearningStartWindow[] = {
 
  // content:
       10,       // revision
@@ -52,6 +56,19 @@ static const uint qt_meta_data_s21__LearningStartWindow[] = {
        0        // eod
 };
 
+Q_CONSTINIT const QMetaObject s21::LearningStartWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    qt_meta_stringdata_s21__LearningStartWindow.offsetsAndSizes,
+    qt_meta_data_s21__LearningStartWindow,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_s21__LearningStartWindow_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<LearningStartWindow, std::true_type>
+    >,
+    nullptr
+} };
+
 void s21::LearningStartWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
@@ -59,22 +76,6 @@ void s21::LearningStartWindow::qt_static_metacall(QObject *_o, QMetaObject::Call
     (void)_c;
     (void)_a;
 }
-
-const QMetaObject s21::LearningStartWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_s21__LearningStartWindow.offsetsAndSize,
-    qt_meta_data_s21__LearningStartWindow,
-    qt_static_metacall,
-    nullptr,
-qt_incomplete_metaTypeArray<qt_meta_stringdata_s21__LearningStartWindow_t
-, QtPrivate::TypeAndForceComplete<LearningStartWindow, std::true_type>
-
-
-
->,
-    nullptr
-} };
-
 
 const QMetaObject *s21::LearningStartWindow::metaObject() const
 {

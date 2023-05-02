@@ -1,64 +1,88 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'secondwindow.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.3)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
 #include "../../../graphics/headers/secondwindow.hpp"
-#include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'secondwindow.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.2.3. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+namespace {
 struct qt_meta_stringdata_s21__secondWindow_t {
-    const uint offsetsAndSize[30];
-    char stringdata0[291];
+    uint offsetsAndSizes[30];
+    char stringdata0[18];
+    char stringdata1[9];
+    char stringdata2[1];
+    char stringdata3[10];
+    char stringdata4[20];
+    char stringdata5[7];
+    char stringdata6[28];
+    char stringdata7[27];
+    char stringdata8[12];
+    char stringdata9[13];
+    char stringdata10[27];
+    char stringdata11[29];
+    char stringdata12[29];
+    char stringdata13[31];
+    char stringdata14[30];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(offsetof(qt_meta_stringdata_s21__secondWindow_t, stringdata0) + ofs), len 
-static const qt_meta_stringdata_s21__secondWindow_t qt_meta_stringdata_s21__secondWindow = {
+    uint(sizeof(qt_meta_stringdata_s21__secondWindow_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_s21__secondWindow_t qt_meta_stringdata_s21__secondWindow = {
     {
-QT_MOC_LITERAL(0, 17), // "s21::secondWindow"
-QT_MOC_LITERAL(18, 8), // "testDone"
-QT_MOC_LITERAL(27, 0), // ""
-QT_MOC_LITERAL(28, 9), // "trainDone"
-QT_MOC_LITERAL(38, 19), // "std::vector<double>"
-QT_MOC_LITERAL(58, 6), // "values"
-QT_MOC_LITERAL(65, 27), // "on_pushButton_learn_clicked"
-QT_MOC_LITERAL(93, 26), // "on_pushButton_test_clicked"
-QT_MOC_LITERAL(120, 11), // "showTestWin"
-QT_MOC_LITERAL(132, 12), // "showTrainWin"
-QT_MOC_LITERAL(145, 26), // "on_saveImageButton_clicked"
-QT_MOC_LITERAL(172, 28), // "on_uploadImageButton_clicked"
-QT_MOC_LITERAL(201, 28), // "on_saveWeightsButton_clicked"
-QT_MOC_LITERAL(230, 30), // "on_uploadWeightsButton_clicked"
-QT_MOC_LITERAL(261, 29) // "on_settingsPushButton_clicked"
-
+        QT_MOC_LITERAL(0, 17),  // "s21::secondWindow"
+        QT_MOC_LITERAL(18, 8),  // "testDone"
+        QT_MOC_LITERAL(27, 0),  // ""
+        QT_MOC_LITERAL(28, 9),  // "trainDone"
+        QT_MOC_LITERAL(38, 19),  // "std::vector<double>"
+        QT_MOC_LITERAL(58, 6),  // "values"
+        QT_MOC_LITERAL(65, 27),  // "on_pushButton_learn_clicked"
+        QT_MOC_LITERAL(93, 26),  // "on_pushButton_test_clicked"
+        QT_MOC_LITERAL(120, 11),  // "showTestWin"
+        QT_MOC_LITERAL(132, 12),  // "showTrainWin"
+        QT_MOC_LITERAL(145, 26),  // "on_saveImageButton_clicked"
+        QT_MOC_LITERAL(172, 28),  // "on_uploadImageButton_clicked"
+        QT_MOC_LITERAL(201, 28),  // "on_saveWeightsButton_clicked"
+        QT_MOC_LITERAL(230, 30),  // "on_uploadWeightsButton_clicked"
+        QT_MOC_LITERAL(261, 29)   // "on_settingsPushButton_clicked"
     },
-    "s21::secondWindow\0testDone\0\0trainDone\0"
-    "std::vector<double>\0values\0"
-    "on_pushButton_learn_clicked\0"
-    "on_pushButton_test_clicked\0showTestWin\0"
-    "showTrainWin\0on_saveImageButton_clicked\0"
-    "on_uploadImageButton_clicked\0"
-    "on_saveWeightsButton_clicked\0"
-    "on_uploadWeightsButton_clicked\0"
+    "s21::secondWindow",
+    "testDone",
+    "",
+    "trainDone",
+    "std::vector<double>",
+    "values",
+    "on_pushButton_learn_clicked",
+    "on_pushButton_test_clicked",
+    "showTestWin",
+    "showTrainWin",
+    "on_saveImageButton_clicked",
+    "on_uploadImageButton_clicked",
+    "on_saveWeightsButton_clicked",
+    "on_uploadWeightsButton_clicked",
     "on_settingsPushButton_clicked"
 };
 #undef QT_MOC_LITERAL
+} // unnamed namespace
 
-static const uint qt_meta_data_s21__secondWindow[] = {
+Q_CONSTINIT static const uint qt_meta_data_s21__secondWindow[] = {
 
  // content:
       10,       // revision
@@ -104,6 +128,43 @@ static const uint qt_meta_data_s21__secondWindow[] = {
        0        // eod
 };
 
+Q_CONSTINIT const QMetaObject s21::secondWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    qt_meta_stringdata_s21__secondWindow.offsetsAndSizes,
+    qt_meta_data_s21__secondWindow,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_s21__secondWindow_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<secondWindow, std::true_type>,
+        // method 'testDone'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'trainDone'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::vector<double> &, std::false_type>,
+        // method 'on_pushButton_learn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_test_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showTestWin'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showTrainWin'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::vector<double> &, std::false_type>,
+        // method 'on_saveImageButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_uploadImageButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_saveWeightsButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_uploadWeightsButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_settingsPushButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
+    >,
+    nullptr
+} };
+
 void s21::secondWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -111,11 +172,11 @@ void s21::secondWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         (void)_t;
         switch (_id) {
         case 0: _t->testDone(); break;
-        case 1: _t->trainDone((*reinterpret_cast< const std::vector<double>(*)>(_a[1]))); break;
+        case 1: _t->trainDone((*reinterpret_cast< std::add_pointer_t<std::vector<double>>>(_a[1]))); break;
         case 2: _t->on_pushButton_learn_clicked(); break;
         case 3: _t->on_pushButton_test_clicked(); break;
         case 4: _t->showTestWin(); break;
-        case 5: _t->showTrainWin((*reinterpret_cast< const std::vector<double>(*)>(_a[1]))); break;
+        case 5: _t->showTrainWin((*reinterpret_cast< std::add_pointer_t<std::vector<double>>>(_a[1]))); break;
         case 6: _t->on_saveImageButton_clicked(); break;
         case 7: _t->on_uploadImageButton_clicked(); break;
         case 8: _t->on_saveWeightsButton_clicked(); break;
@@ -127,36 +188,20 @@ void s21::secondWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (secondWindow::*)();
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&secondWindow::testDone)) {
+            if (_t _q_method = &secondWindow::testDone; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
             using _t = void (secondWindow::*)(const std::vector<double> & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&secondWindow::trainDone)) {
+            if (_t _q_method = &secondWindow::trainDone; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
         }
     }
 }
-
-const QMetaObject s21::secondWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_s21__secondWindow.offsetsAndSize,
-    qt_meta_data_s21__secondWindow,
-    qt_static_metacall,
-    nullptr,
-qt_incomplete_metaTypeArray<qt_meta_stringdata_s21__secondWindow_t
-, QtPrivate::TypeAndForceComplete<secondWindow, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const std::vector<double> &, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const std::vector<double> &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
-
-
->,
-    nullptr
-} };
-
 
 const QMetaObject *s21::secondWindow::metaObject() const
 {

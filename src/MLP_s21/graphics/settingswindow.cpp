@@ -11,10 +11,17 @@ settingsWindow::settingsWindow(QWidget* parent)
   ui->setupUi(this);
   ui->kgroupSpin->setDisabled(true);
 
+  int idFont = QFontDatabase::addApplicationFont(":/MountainsofChristmas-Regular.ttf");
+  QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
+  QFont IC(itimCyrillic);
+  IC.setPixelSize(16);
+  this->setFont(IC);
+  this->setFont(IC);
+
   for (int i = 2; i <= 5; ++i) {
     ui->layers_comboBox->addItem(QString::number(i));
   }
-  for (int i = 1; i <= 30; ++i) {
+  for (int i = 1; i <= 10; ++i) {
     ui->epochs_comboBox->addItem(QString::number(i));
   }
 }

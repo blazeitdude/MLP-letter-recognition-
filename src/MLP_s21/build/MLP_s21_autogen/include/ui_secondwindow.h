@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'secondwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.3
+** Created by: Qt User Interface Compiler version 6.4.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -34,10 +34,10 @@ public:
     void setupUi(QWidget *secondWindow)
     {
         if (secondWindow->objectName().isEmpty())
-            secondWindow->setObjectName(QString::fromUtf8("secondWindow"));
+            secondWindow->setObjectName("secondWindow");
         secondWindow->resize(1230, 889);
         saveImageButton = new QPushButton(secondWindow);
-        saveImageButton->setObjectName(QString::fromUtf8("saveImageButton"));
+        saveImageButton->setObjectName("saveImageButton");
         saveImageButton->setGeometry(QRect(350, 730, 283, 62));
         saveImageButton->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -53,13 +53,13 @@ public:
 "\n"
 "color: #FFFFFF"));
         predictLabel = new QLabel(secondWindow);
-        predictLabel->setObjectName(QString::fromUtf8("predictLabel"));
+        predictLabel->setObjectName("predictLabel");
         predictLabel->setGeometry(QRect(670, 220, 201, 161));
         QFont font;
         font.setPointSize(38);
         predictLabel->setFont(font);
         pushButton_learn = new QPushButton(secondWindow);
-        pushButton_learn->setObjectName(QString::fromUtf8("pushButton_learn"));
+        pushButton_learn->setObjectName("pushButton_learn");
         pushButton_learn->setGeometry(QRect(850, 450, 283, 62));
         pushButton_learn->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -75,7 +75,7 @@ public:
 "\n"
 "color: #FFFFFF"));
         uploadWeightsButton = new QPushButton(secondWindow);
-        uploadWeightsButton->setObjectName(QString::fromUtf8("uploadWeightsButton"));
+        uploadWeightsButton->setObjectName("uploadWeightsButton");
         uploadWeightsButton->setGeometry(QRect(850, 720, 283, 62));
         uploadWeightsButton->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -91,7 +91,7 @@ public:
 "\n"
 "color: #FFFFFF"));
         saveWeightsButton = new QPushButton(secondWindow);
-        saveWeightsButton->setObjectName(QString::fromUtf8("saveWeightsButton"));
+        saveWeightsButton->setObjectName("saveWeightsButton");
         saveWeightsButton->setGeometry(QRect(850, 630, 283, 62));
         saveWeightsButton->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -107,7 +107,7 @@ public:
 "\n"
 "color: #FFFFFF"));
         uploadImageButton = new QPushButton(secondWindow);
-        uploadImageButton->setObjectName(QString::fromUtf8("uploadImageButton"));
+        uploadImageButton->setObjectName("uploadImageButton");
         uploadImageButton->setGeometry(QRect(40, 730, 283, 62));
         uploadImageButton->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -123,7 +123,7 @@ public:
 "\n"
 "color: #FFFFFF"));
         pushButton_test = new QPushButton(secondWindow);
-        pushButton_test->setObjectName(QString::fromUtf8("pushButton_test"));
+        pushButton_test->setObjectName("pushButton_test");
         pushButton_test->setGeometry(QRect(850, 540, 283, 62));
         pushButton_test->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -139,7 +139,7 @@ public:
 "\n"
 "color: #FFFFFF"));
         settingsPushButton = new QPushButton(secondWindow);
-        settingsPushButton->setObjectName(QString::fromUtf8("settingsPushButton"));
+        settingsPushButton->setObjectName("settingsPushButton");
         settingsPushButton->setGeometry(QRect(850, 150, 283, 62));
         settingsPushButton->setStyleSheet(QString::fromUtf8("width: 253px;\n"
 "height: 46px;\n"
@@ -155,7 +155,7 @@ public:
 "\n"
 "color: #FFFFFF"));
         draw_widget = new s21::PaintScene(secondWindow);
-        draw_widget->setObjectName(QString::fromUtf8("draw_widget"));
+        draw_widget->setObjectName("draw_widget");
         draw_widget->setGeometry(QRect(50, 150, 512, 512));
 
         retranslateUi(secondWindow);

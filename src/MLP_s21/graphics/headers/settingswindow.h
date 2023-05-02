@@ -3,6 +3,7 @@
 
 #include <QCloseEvent>
 #include <QDialog>
+#include <QFontDatabase>
 
 #include "../../controller/controller.hpp"
 

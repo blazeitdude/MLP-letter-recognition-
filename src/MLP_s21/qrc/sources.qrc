@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
     <file>pngegg.png</file>
+	<file>MountainsofChristmas-Regular.ttf</file>
     </qresource>
 </RCC>

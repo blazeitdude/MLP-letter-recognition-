@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingswindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.3
+** Created by: Qt User Interface Compiler version 6.4.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -39,10 +39,10 @@ public:
     void setupUi(QDialog *settingsWindow)
     {
         if (settingsWindow->objectName().isEmpty())
-            settingsWindow->setObjectName(QString::fromUtf8("settingsWindow"));
+            settingsWindow->setObjectName("settingsWindow");
         settingsWindow->resize(632, 532);
         radioButton_matrix = new QRadioButton(settingsWindow);
-        radioButton_matrix->setObjectName(QString::fromUtf8("radioButton_matrix"));
+        radioButton_matrix->setObjectName("radioButton_matrix");
         radioButton_matrix->setGeometry(QRect(20, 60, 229, 46));
         radioButton_matrix->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 208px;\n"
@@ -61,7 +61,7 @@ public:
 ""));
         radioButton_matrix->setChecked(true);
         doubleSpinBox = new QDoubleSpinBox(settingsWindow);
-        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+        doubleSpinBox->setObjectName("doubleSpinBox");
         doubleSpinBox->setGeometry(QRect(190, 430, 62, 22));
         QFont font;
         font.setBold(true);
@@ -70,7 +70,7 @@ public:
         doubleSpinBox->setSingleStep(0.050000000000000);
         doubleSpinBox->setValue(1.000000000000000);
         label_4 = new QLabel(settingsWindow);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(380, 160, 131, 38));
         label_4->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 181px;\n"
@@ -87,13 +87,13 @@ public:
 "\n"
 "color: #FFFFFF;"));
         selectLabel = new QLabel(settingsWindow);
-        selectLabel->setObjectName(QString::fromUtf8("selectLabel"));
+        selectLabel->setObjectName("selectLabel");
         selectLabel->setGeometry(QRect(30, 410, 141, 61));
         QFont font1;
         font1.setPointSize(22);
         selectLabel->setFont(font1);
         radioButton_graph = new QRadioButton(settingsWindow);
-        radioButton_graph->setObjectName(QString::fromUtf8("radioButton_graph"));
+        radioButton_graph->setObjectName("radioButton_graph");
         radioButton_graph->setGeometry(QRect(370, 60, 233, 50));
         radioButton_graph->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 208px;\n"
@@ -112,14 +112,14 @@ public:
 "color: #FFFFFF;\n"
 ""));
         kgroupSpin = new QSpinBox(settingsWindow);
-        kgroupSpin->setObjectName(QString::fromUtf8("kgroupSpin"));
+        kgroupSpin->setObjectName("kgroupSpin");
         kgroupSpin->setGeometry(QRect(450, 370, 121, 41));
         kgroupSpin->setValue(1);
         label_2 = new QLabel(settingsWindow);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(350, 370, 81, 31));
         label = new QLabel(settingsWindow);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName("label");
         label->setGeometry(QRect(40, 160, 117, 38));
         label->setStyleSheet(QString::fromUtf8("position: absolute;\n"
 "width: 181px;\n"
@@ -136,16 +136,16 @@ public:
 "\n"
 "color: #FFFFFF;"));
         crossValidationCheck = new QCheckBox(settingsWindow);
-        crossValidationCheck->setObjectName(QString::fromUtf8("crossValidationCheck"));
+        crossValidationCheck->setObjectName("crossValidationCheck");
         crossValidationCheck->setGeometry(QRect(50, 360, 161, 51));
         QFont font2;
         font2.setPointSize(20);
         crossValidationCheck->setFont(font2);
         layers_comboBox = new QComboBox(settingsWindow);
-        layers_comboBox->setObjectName(QString::fromUtf8("layers_comboBox"));
+        layers_comboBox->setObjectName("layers_comboBox");
         layers_comboBox->setGeometry(QRect(30, 230, 103, 51));
         epochs_comboBox = new QComboBox(settingsWindow);
-        epochs_comboBox->setObjectName(QString::fromUtf8("epochs_comboBox"));
+        epochs_comboBox->setObjectName("epochs_comboBox");
         epochs_comboBox->setGeometry(QRect(390, 240, 103, 32));
 
         retranslateUi(settingsWindow);

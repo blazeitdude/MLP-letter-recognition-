@@ -1,19 +1,23 @@
 {
-	"BUILD_DIR" : "/Users/cmilagro/Desktop/MLP_s21/build/MLP_s21_autogen",
-	"CMAKE_BINARY_DIR" : "/Users/cmilagro/Desktop/MLP_s21/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/Users/cmilagro/Desktop/MLP_s21/build",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/cmilagro/Desktop/MLP_s21",
-	"CMAKE_SOURCE_DIR" : "/Users/cmilagro/Desktop/MLP_s21",
-	"INCLUDE_DIR" : "/Users/cmilagro/Desktop/MLP_s21/build/MLP_s21_autogen/include",
-	"INPUTS" : [ "/Users/cmilagro/Desktop/MLP_s21/qrc/pngegg.png" ],
-	"LOCK_FILE" : "/Users/cmilagro/Desktop/MLP_s21/build/CMakeFiles/MLP_s21_autogen.dir/AutoRcc_sources_UD7UKI5KT2_Lock.lock",
+	"BUILD_DIR" : "/Users/otttisss/Desktop/MLP_s21/build/MLP_s21_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/otttisss/Desktop/MLP_s21/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/otttisss/Desktop/MLP_s21/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/otttisss/Desktop/MLP_s21",
+	"CMAKE_SOURCE_DIR" : "/Users/otttisss/Desktop/MLP_s21",
+	"INCLUDE_DIR" : "/Users/otttisss/Desktop/MLP_s21/build/MLP_s21_autogen/include",
+	"INPUTS" : 
+	[
+		"/Users/otttisss/Desktop/MLP_s21/qrc/pngegg.png",
+		"/Users/otttisss/Desktop/MLP_s21/qrc/MountainsofChristmas-Regular.ttf"
+	],
+	"LOCK_FILE" : "/Users/otttisss/Desktop/MLP_s21/build/CMakeFiles/MLP_s21_autogen.dir/AutoRcc_sources_UD7UKI5KT2_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "-name", "sources" ],
 	"OUTPUT_CHECKSUM" : "UD7UKI5KT2",
 	"OUTPUT_NAME" : "qrc_sources.cpp",
-	"RCC_EXECUTABLE" : "/usr/local/share/qt/libexec/rcc",
+	"RCC_EXECUTABLE" : "/Users/otttisss/Qt/6.4.2/macos/./libexec/rcc",
 	"RCC_LIST_OPTIONS" : [ "--list" ],
-	"SETTINGS_FILE" : "/Users/cmilagro/Desktop/MLP_s21/build/CMakeFiles/MLP_s21_autogen.dir/AutoRcc_sources_UD7UKI5KT2_Used.txt",
-	"SOURCE" : "/Users/cmilagro/Desktop/MLP_s21/qrc/sources.qrc",
+	"SETTINGS_FILE" : "/Users/otttisss/Desktop/MLP_s21/build/CMakeFiles/MLP_s21_autogen.dir/AutoRcc_sources_UD7UKI5KT2_Used.txt",
+	"SOURCE" : "/Users/otttisss/Desktop/MLP_s21/qrc/sources.qrc",
 	"VERBOSITY" : 0
 }

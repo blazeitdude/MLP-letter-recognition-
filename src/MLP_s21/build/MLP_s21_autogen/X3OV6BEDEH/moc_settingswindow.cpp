@@ -1,47 +1,55 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'settingswindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.3)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include <memory>
 #include "../../../graphics/headers/settingswindow.h"
-#include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'settingswindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.2.3. It"
+#error "This file was generated using the moc from 6.4.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+namespace {
 struct qt_meta_stringdata_s21__settingsWindow_t {
-    const uint offsetsAndSize[8];
-    char stringdata0[63];
+    uint offsetsAndSizes[8];
+    char stringdata0[20];
+    char stringdata1[37];
+    char stringdata2[1];
+    char stringdata3[5];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(offsetof(qt_meta_stringdata_s21__settingsWindow_t, stringdata0) + ofs), len 
-static const qt_meta_stringdata_s21__settingsWindow_t qt_meta_stringdata_s21__settingsWindow = {
+    uint(sizeof(qt_meta_stringdata_s21__settingsWindow_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_s21__settingsWindow_t qt_meta_stringdata_s21__settingsWindow = {
     {
-QT_MOC_LITERAL(0, 19), // "s21::settingsWindow"
-QT_MOC_LITERAL(20, 36), // "on_crossValidationCheck_state..."
-QT_MOC_LITERAL(57, 0), // ""
-QT_MOC_LITERAL(58, 4) // "arg1"
-
+        QT_MOC_LITERAL(0, 19),  // "s21::settingsWindow"
+        QT_MOC_LITERAL(20, 36),  // "on_crossValidationCheck_state..."
+        QT_MOC_LITERAL(57, 0),  // ""
+        QT_MOC_LITERAL(58, 4)   // "arg1"
     },
-    "s21::settingsWindow\0"
-    "on_crossValidationCheck_stateChanged\0"
-    "\0arg1"
+    "s21::settingsWindow",
+    "on_crossValidationCheck_stateChanged",
+    "",
+    "arg1"
 };
 #undef QT_MOC_LITERAL
+} // unnamed namespace
 
-static const uint qt_meta_data_s21__settingsWindow[] = {
+Q_CONSTINIT static const uint qt_meta_data_s21__settingsWindow[] = {
 
  // content:
       10,       // revision
@@ -63,33 +71,33 @@ static const uint qt_meta_data_s21__settingsWindow[] = {
        0        // eod
 };
 
+Q_CONSTINIT const QMetaObject s21::settingsWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    qt_meta_stringdata_s21__settingsWindow.offsetsAndSizes,
+    qt_meta_data_s21__settingsWindow,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_s21__settingsWindow_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<settingsWindow, std::true_type>,
+        // method 'on_crossValidationCheck_stateChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
+    >,
+    nullptr
+} };
+
 void s21::settingsWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<settingsWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_crossValidationCheck_stateChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->on_crossValidationCheck_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
 }
-
-const QMetaObject s21::settingsWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_s21__settingsWindow.offsetsAndSize,
-    qt_meta_data_s21__settingsWindow,
-    qt_static_metacall,
-    nullptr,
-qt_incomplete_metaTypeArray<qt_meta_stringdata_s21__settingsWindow_t
-, QtPrivate::TypeAndForceComplete<settingsWindow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
-
-
->,
-    nullptr
-} };
-
 
 const QMetaObject *s21::settingsWindow::metaObject() const
 {

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'learningmainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.3
+** Created by: Qt User Interface Compiler version 6.4.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -26,13 +26,13 @@ public:
     void setupUi(QDialog *LearningMainWindow)
     {
         if (LearningMainWindow->objectName().isEmpty())
-            LearningMainWindow->setObjectName(QString::fromUtf8("LearningMainWindow"));
+            LearningMainWindow->setObjectName("LearningMainWindow");
         LearningMainWindow->resize(850, 550);
         verticalLayoutWidget = new QWidget(LearningMainWindow);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
         verticalLayoutWidget->setGeometry(QRect(140, 50, 541, 421));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(LearningMainWindow);

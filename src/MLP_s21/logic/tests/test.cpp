@@ -75,7 +75,7 @@ TEST(matrixNetwork, checkAnswerOne) {
   s21::NetInterface* neural = new s21::GraphNet();
 
   neural->setLayers(neural->getLayersVect(2));
-  neural->readExperience("./weights/weights_2.txt");
+  neural->readExperience("./weights/weights_3.txt");
 
   std::vector<double> input = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -141,7 +141,7 @@ TEST(matrixNetwork, checkAnswerTwo) {
   s21::NetInterface* neural = new s21::GraphNet();
 
   neural->setLayers(neural->getLayersVect(2));
-  neural->readExperience("./weights/weights_2.txt");
+  neural->readExperience("./weights/weights_3.txt");
 
   std::vector<double> input = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,

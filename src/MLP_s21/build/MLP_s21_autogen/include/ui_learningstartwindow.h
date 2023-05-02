@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'learningstartwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.3
+** Created by: Qt User Interface Compiler version 6.4.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -33,37 +33,37 @@ public:
     void setupUi(QDialog *LearningStartWindow)
     {
         if (LearningStartWindow->objectName().isEmpty())
-            LearningStartWindow->setObjectName(QString::fromUtf8("LearningStartWindow"));
+            LearningStartWindow->setObjectName("LearningStartWindow");
         LearningStartWindow->resize(557, 424);
         accuracyLabel = new QLabel(LearningStartWindow);
-        accuracyLabel->setObjectName(QString::fromUtf8("accuracyLabel"));
+        accuracyLabel->setObjectName("accuracyLabel");
         accuracyLabel->setGeometry(QRect(290, 70, 171, 31));
         precisionLabel = new QLabel(LearningStartWindow);
-        precisionLabel->setObjectName(QString::fromUtf8("precisionLabel"));
+        precisionLabel->setObjectName("precisionLabel");
         precisionLabel->setGeometry(QRect(290, 140, 171, 31));
         recallLabel = new QLabel(LearningStartWindow);
-        recallLabel->setObjectName(QString::fromUtf8("recallLabel"));
+        recallLabel->setObjectName("recallLabel");
         recallLabel->setGeometry(QRect(290, 210, 171, 31));
         measureLabel = new QLabel(LearningStartWindow);
-        measureLabel->setObjectName(QString::fromUtf8("measureLabel"));
+        measureLabel->setObjectName("measureLabel");
         measureLabel->setGeometry(QRect(290, 270, 171, 31));
         timeLabel = new QLabel(LearningStartWindow);
-        timeLabel->setObjectName(QString::fromUtf8("timeLabel"));
+        timeLabel->setObjectName("timeLabel");
         timeLabel->setGeometry(QRect(290, 330, 171, 31));
         label = new QLabel(LearningStartWindow);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName("label");
         label->setGeometry(QRect(70, 80, 58, 16));
         label_2 = new QLabel(LearningStartWindow);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(70, 140, 58, 16));
         label_3 = new QLabel(LearningStartWindow);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(70, 210, 58, 16));
         label_4 = new QLabel(LearningStartWindow);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(70, 280, 58, 16));
         label_5 = new QLabel(LearningStartWindow);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(70, 340, 58, 16));
 
         retranslateUi(LearningStartWindow);
