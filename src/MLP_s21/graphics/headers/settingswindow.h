@@ -27,10 +27,6 @@ class settingsWindow : public QDialog {
   size_t getKGroups();
 
  private slots:
-  void on_horizontalSlider_layer_valueChanged(int value);
-
-  void on_horizontalSlider_epochs_valueChanged(int value);
-
   void on_crossValidationCheck_stateChanged(int arg1);
 
  private:

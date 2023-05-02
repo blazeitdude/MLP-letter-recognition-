@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>632</width>
-    <height>618</height>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,53 +46,11 @@ color: #FFFFFF;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_numLay">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>160</y>
-     <width>19</width>
-     <height>38</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">position: absolute;
-width: 181px;
-height: 41px;
-left: 1089px;
-top: 375px;
-
-font-family: 'Mountains of Christmas';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 44px;
-letter-spacing: 0.24em;
-
-color: #FFFFFF;</string>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
-  <widget class="QSlider" name="horizontalSlider_epochs">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>240</y>
-     <width>251</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
   <widget class="QDoubleSpinBox" name="doubleSpinBox">
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>520</y>
+     <y>430</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -110,35 +68,6 @@ color: #FFFFFF;</string>
    </property>
    <property name="value">
     <double>1.000000000000000</double>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_numEpoc">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>160</y>
-     <width>51</width>
-     <height>38</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">position: absolute;
-width: 181px;
-height: 41px;
-left: 1089px;
-top: 375px;
-
-font-family: 'Mountains of Christmas';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 44px;
-letter-spacing: 0.24em;
-
-color: #FFFFFF;</string>
-   </property>
-   <property name="text">
-    <string>1</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -174,7 +103,7 @@ color: #FFFFFF;</string>
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>500</y>
+     <y>410</y>
      <width>141</width>
      <height>61</height>
     </rect>
@@ -223,7 +152,7 @@ color: #FFFFFF;
    <property name="geometry">
     <rect>
      <x>450</x>
-     <y>460</y>
+     <y>370</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -232,24 +161,11 @@ color: #FFFFFF;
     <number>1</number>
    </property>
   </widget>
-  <widget class="QSlider" name="horizontalSlider_layer">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>240</y>
-     <width>151</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>460</y>
+     <y>370</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -261,7 +177,7 @@ color: #FFFFFF;
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>40</x>
      <y>160</y>
      <width>117</width>
      <height>38</height>
@@ -291,7 +207,7 @@ color: #FFFFFF;</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>450</y>
+     <y>360</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -308,8 +224,8 @@ color: #FFFFFF;</string>
   <widget class="QComboBox" name="layers_comboBox">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>320</y>
+     <x>30</x>
+     <y>230</y>
      <width>103</width>
      <height>51</height>
     </rect>
@@ -318,8 +234,8 @@ color: #FFFFFF;</string>
   <widget class="QComboBox" name="epochs_comboBox">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>330</y>
+     <x>390</x>
+     <y>240</y>
      <width>103</width>
      <height>32</height>
     </rect>

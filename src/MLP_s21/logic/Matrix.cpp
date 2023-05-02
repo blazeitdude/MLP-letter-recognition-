@@ -3,6 +3,7 @@
 //
 
 #include "headers/Matrix.hpp"
+#include <stdexcept>
 
 namespace s21 {
 Matrix::Matrix() : row(0), column(0), value(nullptr) {}

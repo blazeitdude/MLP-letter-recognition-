@@ -20,7 +20,7 @@ void GraphNet::backPropagation(std::vector<double> &right) {
 void GraphNet::forwardFeed() {
   for (size_t layer = 0; layer < neurons.size(); layer++) {
     for (size_t i = 0; i < neurons[layer + 1].size(); i++) {
-      double sum = 0.0;
+      double sum = 0.;
       for (size_t j = 0; j < neurons[layer].size(); j++) {
         sum += neurons[layer][j].getWeights(i) * neurons[layer][j].getValue();
       }
@@ -38,10 +38,9 @@ void GraphNet::feedInitValues(const std::vector<double> &values) {
 void GraphNet::saveExperience(std::string path) {
   std::fstream file;
 
-  file.close();
   file.open(path, std::fstream::out);
-  if (!file.is_open())
-    throw std::invalid_argument("Error: unable to save weights");
+  // if (!file.is_open())
+  //   throw std::invalid_argument("Error: unable to save weights");
   file << SIGNATURE << std::endl;
   for (int i = 0; i < topology.size(); i++) {
     file << topology[i] << ' ';

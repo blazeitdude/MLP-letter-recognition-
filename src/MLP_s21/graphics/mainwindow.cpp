@@ -15,7 +15,7 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_pushButton_clicked() {
-  win->setFixedSize(1440, 1024);
+  win->setFixedSize(1230, 889);
   win->show();
   this->hide();
 }

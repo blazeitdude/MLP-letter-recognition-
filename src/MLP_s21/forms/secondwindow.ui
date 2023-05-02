@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1440</width>
-    <height>1024</height>
+    <width>1230</width>
+    <height>889</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>870</y>
+     <y>730</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -44,15 +44,15 @@ color: #FFFFFF</string>
   <widget class="QLabel" name="predictLabel">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>670</y>
-     <width>131</width>
-     <height>91</height>
+     <x>670</x>
+     <y>220</y>
+     <width>201</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>27</pointsize>
+     <pointsize>38</pointsize>
     </font>
    </property>
    <property name="text">
@@ -62,8 +62,8 @@ color: #FFFFFF</string>
   <widget class="QPushButton" name="pushButton_learn">
    <property name="geometry">
     <rect>
-     <x>1120</x>
-     <y>670</y>
+     <x>850</x>
+     <y>450</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -90,8 +90,8 @@ color: #FFFFFF</string>
   <widget class="QPushButton" name="uploadWeightsButton">
    <property name="geometry">
     <rect>
-     <x>1120</x>
-     <y>920</y>
+     <x>850</x>
+     <y>720</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -118,8 +118,8 @@ color: #FFFFFF</string>
   <widget class="QPushButton" name="saveWeightsButton">
    <property name="geometry">
     <rect>
-     <x>1120</x>
-     <y>830</y>
+     <x>850</x>
+     <y>630</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -147,7 +147,7 @@ color: #FFFFFF</string>
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>870</y>
+     <y>730</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -171,22 +171,11 @@ color: #FFFFFF</string>
     <string>Upload Image</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>850</x>
-     <y>30</y>
-     <width>512</width>
-     <height>512</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout"/>
-  </widget>
   <widget class="QPushButton" name="pushButton_test">
    <property name="geometry">
     <rect>
-     <x>1120</x>
-     <y>750</y>
+     <x>850</x>
+     <y>540</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -213,8 +202,8 @@ color: #FFFFFF</string>
   <widget class="QPushButton" name="settingsPushButton">
    <property name="geometry">
     <rect>
-     <x>1120</x>
-     <y>600</y>
+     <x>850</x>
+     <y>150</y>
      <width>283</width>
      <height>62</height>
     </rect>
@@ -241,7 +230,7 @@ color: #FFFFFF</string>
   <widget class="s21::PaintScene" name="draw_widget" native="true">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>50</x>
      <y>150</y>
      <width>512</width>
      <height>512</height>

@@ -28,5 +28,6 @@ dvi:
 		open readme.pdf
 
 tests: clean
-		g++ -std=c++17 logic/
+		rm -rf test
+		g++ -std=c++17 -lgtest logic/tests/test.cpp logic/*.cpp -o test
 		

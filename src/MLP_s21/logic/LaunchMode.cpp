@@ -3,6 +3,7 @@
 //
 #include "headers/Emnist_sample.hpp"
 #include "headers/MatrixNet.hpp"
+#include <chrono>
 
 namespace s21 {
 
@@ -12,7 +13,6 @@ auto NetInterface::trainMode(const std::string &fileName, const size_t epoch)
   v_double error;
 
   for (int i = 0; i < epoch; i++) {
-    // std::cout << "epoch " << i << std::endl;
     reader.connect(fileName);
     const int ex = reader.getAmount();
     int accuracy = 0;

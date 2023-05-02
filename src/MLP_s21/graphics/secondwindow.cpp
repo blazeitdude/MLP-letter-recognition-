@@ -16,7 +16,7 @@ secondWindow::secondWindow(QWidget *parent)
   ui->setupUi(this);
   ui->draw_widget->setWindow(this);
   int idFont = QFontDatabase::addApplicationFont(
-      "/Users/otttisss/Desktop/MLP_s21/resources/"
+      "/Users/cmilagro/Desktop/MLP_s21/resources/"
       "MountainsofChristmas-Regular.ttf");
   QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
   QFont IC(itimCyrillic);
