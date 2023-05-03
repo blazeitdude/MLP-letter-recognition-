@@ -129,8 +129,6 @@ void MatrixNet::saveExperience(std::string path) {
   std::fstream file;
 
   file.open(path, std::fstream::out);
-  // if (!file.is_open())
-  //   throw std::invalid_argument("Error: unable to save weights");
   file << SIGNATURE << std::endl;
   for (int i = 0; i < topology.size(); i++) {
     file << topology[i] << ' ';

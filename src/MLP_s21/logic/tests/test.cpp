@@ -3,9 +3,9 @@
 #include <vector>
 
 #include "../headers/Emnist_sample.hpp"
-#include "../headers/Net.hpp"
 #include "../headers/GraphNet.hpp"
 #include "../headers/MatrixNet.hpp"
+#include "../headers/Net.hpp"
 
 TEST(readModel, ReadFile) {
   s21::Emnist_reader reader;
@@ -72,10 +72,10 @@ TEST(readModel, ReadFile) {
 }
 
 TEST(matrixNetwork, checkAnswerOne) {
-  s21::NetInterface* neural = new s21::GraphNet();
+  s21::NetInterface* neural = new s21::MatrixNet();
 
-  neural->setLayers(neural->getLayersVect(2));
-  neural->readExperience("./weights/weights_3.txt");
+  neural->setLayers(neural->getLayersVect(5));
+  neural->readExperience("./weights/weights_5.txt");
 
   std::vector<double> input = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -134,14 +134,14 @@ TEST(matrixNetwork, checkAnswerOne) {
   neural->feedInitValues(input);
   neural->forwardFeed();
 
-  ASSERT_EQ(neural->getResult() + 65, 'V');
+  ASSERT_EQ(neural->getResult() + 65, 'K');
 }
 
 TEST(matrixNetwork, checkAnswerTwo) {
-  s21::NetInterface* neural = new s21::GraphNet();
+  s21::NetInterface* neural = new s21::MatrixNet();
 
-  neural->setLayers(neural->getLayersVect(2));
-  neural->readExperience("./weights/weights_3.txt");
+  neural->setLayers(neural->getLayersVect(5));
+  neural->readExperience("./weights/weights_5.txt");
 
   std::vector<double> input = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -200,7 +200,7 @@ TEST(matrixNetwork, checkAnswerTwo) {
 
   neural->feedInitValues(input);
   neural->forwardFeed();
-  ASSERT_EQ(neural->getResult() + 65, 'M');
+  ASSERT_EQ(neural->getResult() + 65, 'C');
 }
 
 int main(int argc, char* argv[]) {

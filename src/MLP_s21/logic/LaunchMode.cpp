@@ -1,9 +1,10 @@
 //
 // Created by Louvenia Dione on 2/3/23.
 //
+#include <chrono>
+
 #include "headers/Emnist_sample.hpp"
 #include "headers/MatrixNet.hpp"
-#include <chrono>
 
 namespace s21 {
 

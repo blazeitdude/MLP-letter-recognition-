@@ -11,7 +11,8 @@ settingsWindow::settingsWindow(QWidget* parent)
   ui->setupUi(this);
   ui->kgroupSpin->setDisabled(true);
 
-  int idFont = QFontDatabase::addApplicationFont(":/MountainsofChristmas-Regular.ttf");
+  int idFont =
+      QFontDatabase::addApplicationFont(":/MountainsofChristmas-Regular.ttf");
   QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
   QFont IC(itimCyrillic);
   IC.setPixelSize(16);

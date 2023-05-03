@@ -1,4 +1,0 @@
-/Users/otttisss/Desktop/MLP_s21/build/CMakeFiles/MLP_s21.dir
-/Users/otttisss/Desktop/MLP_s21/build/CMakeFiles/edit_cache.dir
-/Users/otttisss/Desktop/MLP_s21/build/CMakeFiles/rebuild_cache.dir
-/Users/otttisss/Desktop/MLP_s21/build/CMakeFiles/MLP_s21_autogen.dir

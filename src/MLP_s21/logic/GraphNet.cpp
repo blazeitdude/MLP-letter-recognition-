@@ -18,7 +18,7 @@ void GraphNet::backPropagation(std::vector<double> &right) {
 }
 
 void GraphNet::forwardFeed() {
-  for (size_t layer = 0; layer < neurons.size(); layer++) {
+  for (size_t layer = 0; layer < neurons.size() - 1; layer++) {
     for (size_t i = 0; i < neurons[layer + 1].size(); i++) {
       double sum = 0.;
       for (size_t j = 0; j < neurons[layer].size(); j++) {

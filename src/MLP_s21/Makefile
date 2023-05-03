@@ -1,6 +1,6 @@
 .PHONY: all install uninstall dist clean dvi tests
 
-SOURCES = logic/*.cpp graphics/*.cpp controller/*.cpp
+SOURCES = logic/*.cpp graphics/*.cpp controller/*.cpp logic/tests/*.cpp
 HEADERS = logic/headers/*.hpp graphics/headers/*.hpp graphics/headers/*.h controller/*.hpp
 
 build: 
@@ -9,7 +9,7 @@ build:
 
 install: build
 
-		cp -rf ./build/MLP_Design.app $(HOME)/Applications/
+		cp -rf ./build/MLP_s21.app $(HOME)/Applications/
 
 uninstall:
 
@@ -17,6 +17,7 @@ uninstall:
 
 clean:
 		rm -rf ./build
+		rm -rf test
 
 style:
 		clang-format -n -style=Google $(SOURCES) $(HEADERS)
@@ -28,6 +29,5 @@ dvi:
 		open readme.pdf
 
 tests: clean
-		rm -rf test
 		g++ -std=c++17 -lgtest logic/tests/test.cpp logic/*.cpp -o test
 		

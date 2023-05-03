@@ -25,7 +25,6 @@ class Controller {
       -> std::vector<double>;
   auto validation(const std::string& fileName, const size_t k)
       -> std::vector<double>;
-  //        auto makePredict(const std::vector<double>& vec) -> void;
 
  private:
   NetInterface* _net{};

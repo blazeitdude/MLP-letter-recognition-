@@ -3,6 +3,7 @@
 //
 
 #include "headers/Matrix.hpp"
+
 #include <stdexcept>
 
 namespace s21 {

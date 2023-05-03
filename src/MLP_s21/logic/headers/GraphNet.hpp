@@ -4,7 +4,7 @@
 
 #ifndef MLP_2_0_GRAPHNET_H
 #define MLP_2_0_GRAPHNET_H
-#define Layer std::vector<Neuron>
+// #define Layer std::vector<Neuron>
 
 #include "Net.hpp"
 
@@ -21,6 +21,8 @@ class Neuron {
   void setValue(double);                 //
   double getValue();                     //
 };
+
+typedef std::vector<Neuron> Layer;
 
 class GraphNet : public NetInterface {
  public:
