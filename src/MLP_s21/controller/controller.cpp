@@ -4,9 +4,9 @@ namespace s21 {
 
 Controller::~Controller() { delete _net; }
 
-auto Controller::getNeural() const -> NetInterface* { return _net; }
+auto Controller::GetNeural() const -> NetInterface* { return _net; }
 
-auto Controller::setNeural(s21::NeuralType netType, int hiddenLayers) -> void {
+auto Controller::SetNeural(s21::NeuralType netType, int hiddenLayers) -> void {
   if (netType != _netType || hiddenLayers != _hiddenLayers) {
     delete _net;
     if (netType == s21::NeuralType::MATRIX) {
@@ -16,38 +16,38 @@ auto Controller::setNeural(s21::NeuralType netType, int hiddenLayers) -> void {
     }
     _netType = netType;
     _hiddenLayers = hiddenLayers;
-    _net->setLayers(_net->getLayersVect(_hiddenLayers));
+    _net->SetLayers(_net->GetLayersVect(_hiddenLayers));
   }
 }
 
-auto Controller::feedForward() -> void { _net->forwardFeed(); }
+auto Controller::FeedForward() -> void { _net->ForwardFeed(); }
 
-auto Controller::initValues(const std::vector<double>& values) -> void {
-  _net->feedInitValues(values);
+auto Controller::InitValues(const std::vector<double>& values) -> void {
+  _net->FeedInitValues(values);
 }
 
-auto Controller::getResult() -> size_t { return _net->getResult(); }
+auto Controller::GetResult() -> size_t { return _net->GetResult(); }
 
-auto Controller::saveWeights(const std::string& fileName) -> void {
-  _net->saveExperience(fileName);
+auto Controller::SaveWeights(const std::string& fileName) -> void {
+  _net->SaveExperience(fileName);
 }
 
-auto Controller::loadWeights(const std::string& fileName) -> void {
-  _net->readExperience(fileName);
+auto Controller::LoadWeights(const std::string& fileName) -> void {
+  _net->ReadExperience(fileName);
 }
 
-auto Controller::getInfo(const std::string& fileName, const double dataset)
+auto Controller::GetInfo(const std::string& fileName, const double dataset)
     -> Info {
-  return _net->testMode(fileName, dataset);
+  return _net->TestMode(fileName, dataset);
 }
 
-auto Controller::trainModel(const std::string& fileName, const size_t epoch)
+auto Controller::TrainModel(const std::string& fileName, const size_t epoch)
     -> std::vector<double> {
-  return _net->trainMode(fileName, epoch);
+  return _net->TrainMode(fileName, epoch);
 }
 
-auto Controller::validation(const std::string& fileName, const size_t k)
+auto Controller::Validation(const std::string& fileName, const size_t k)
     -> std::vector<double> {
-  return _net->validation(fileName, k);
+  return _net->Validation(fileName, k);
 }
 }  // namespace s21

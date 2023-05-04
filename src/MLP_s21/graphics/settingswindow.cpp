@@ -29,25 +29,25 @@ settingsWindow::settingsWindow(QWidget* parent)
 
 settingsWindow::~settingsWindow() { delete ui; }
 
-int settingsWindow::getLayersNum() {
+int settingsWindow::GetLayersNum() {
   return ui->layers_comboBox->currentText().toInt();
 }
 
-size_t settingsWindow::getEpochNum() {
+size_t settingsWindow::GetEpochNum() {
   return ui->epochs_comboBox->currentText().toUInt();
 }
 
-double settingsWindow::getSelection() { return ui->doubleSpinBox->value(); }
+double settingsWindow::GetSelection() { return ui->doubleSpinBox->value(); }
 
-bool settingsWindow::isCrossValid() {
+bool settingsWindow::IsCrossValid() {
   return ui->crossValidationCheck->isChecked();
 }
 
-size_t settingsWindow::getKGroups() {
+size_t settingsWindow::GetKGroups() {
   return static_cast<size_t>(ui->kgroupSpin->value());
 }
 
-void settingsWindow::setController(s21::Controller* controller) {
+void settingsWindow::SetController(s21::Controller* controller) {
   _controller = controller;
 }
 
@@ -67,7 +67,7 @@ auto settingsWindow::closeEvent(QCloseEvent* event) -> void {
   } else {
     netType = s21::NeuralType::GRAPH;
   }
-  _controller->setNeural(netType, ui->layers_comboBox->currentText().toInt());
+  _controller->SetNeural(netType, ui->layers_comboBox->currentText().toInt());
   event->accept();
 }
 

@@ -20,17 +20,17 @@ class PaintScene : public QWidget {
   explicit PaintScene(QWidget* parent = nullptr);
   ~PaintScene() override = default;
 
-  const QImage& getImage();
-  void setImage(const QString& path);
-  bool isClear();
-  void setWindow(secondWindow* win);
+  const QImage& GetImage();
+  void SetImage(const QString& path);
+  bool IsClear();
+  void SetWindow(secondWindow* win);
   void mousePressEvent(QMouseEvent* event) override;
   void mouseMoveEvent(QMouseEvent* event) override;
   void mouseReleaseEvent(QMouseEvent* event) override;
   void paintEvent(QPaintEvent* event) override;
-  void clearImage();
-  void draw(const QPoint& point);
-  const std::vector<double>& vectorsInImage();
+  void ClearImage();
+  void Draw(const QPoint& point);
+  const std::vector<double>& VectorsInImage();
 
  private:
   secondWindow* secondWin;

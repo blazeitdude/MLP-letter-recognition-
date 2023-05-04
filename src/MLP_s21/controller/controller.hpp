@@ -13,17 +13,17 @@ class Controller {
  public:
   Controller() = default;
   ~Controller();
-  auto setNeural(s21::NeuralType type, int hiddenLayers) -> void;
-  auto getNeural() const -> NetInterface*;
-  auto feedForward() -> void;
-  auto initValues(const std::vector<double>& values) -> void;
-  auto getResult() -> size_t;
-  auto saveWeights(const std::string& fileName) -> void;
-  auto loadWeights(const std::string& fileName) -> void;
-  auto getInfo(const std::string& fileName, const double dataset) -> Info;
-  auto trainModel(const std::string& fileName, const size_t epoch)
+  auto SetNeural(s21::NeuralType type, int hiddenLayers) -> void;
+  auto GetNeural() const -> NetInterface*;
+  auto FeedForward() -> void;
+  auto InitValues(const std::vector<double>& values) -> void;
+  auto GetResult() -> size_t;
+  auto SaveWeights(const std::string& fileName) -> void;
+  auto LoadWeights(const std::string& fileName) -> void;
+  auto GetInfo(const std::string& fileName, const double dataset) -> Info;
+  auto TrainModel(const std::string& fileName, const size_t epoch)
       -> std::vector<double>;
-  auto validation(const std::string& fileName, const size_t k)
+  auto Validation(const std::string& fileName, const size_t k)
       -> std::vector<double>;
 
  private:

@@ -6,13 +6,13 @@
 
 namespace s21 {
 
-double NetInterface::activateFunction(double res) {
+double NetInterface::ActivateFunction(double res) {
   return 1.0 / (1.0 + exp(-res));
 }
 
-double NetInterface::derivate(double res) { return res * (1 - res); }
+double NetInterface::Derivate(double res) { return res * (1 - res); }
 
-std::vector<config> NetInterface::getLayersConfig(size_t n) {
+std::vector<config> NetInterface::GetLayersConfig(size_t n) {
   std::vector<config> conf;
   conf.push_back(INPUT);
   for (int i = 0; i < n; ++i) {
@@ -22,7 +22,7 @@ std::vector<config> NetInterface::getLayersConfig(size_t n) {
   return conf;
 }
 
-auto NetInterface::getLayersVect(int number) const -> std::vector<config> {
+auto NetInterface::GetLayersVect(int number) const -> std::vector<config> {
   std::vector<config> config;
   config.emplace_back(config::INPUT);
   for (int i = 0; i < number; i++) {
@@ -32,7 +32,7 @@ auto NetInterface::getLayersVect(int number) const -> std::vector<config> {
   return config;
 }
 
-bool NetInterface::check_file(std::fstream& file) {
+bool NetInterface::CheckFile(std::fstream& file) {
   char buff = 0;
   std::string buff_str;
   std::string check;
@@ -61,7 +61,7 @@ bool NetInterface::check_file(std::fstream& file) {
   return true;
 }
 
-auto Info::calculate(int tp, int fp, int tn, int fn, int dataSize) -> void {
+auto Info::Calculate(int tp, int fp, int tn, int fn, int dataSize) -> void {
   accuracy = static_cast<double>(accuracy) / dataSize;
   precision = static_cast<double>(tp) / static_cast<double>(tp + fp);
   recall = static_cast<double>(tp) / static_cast<double>(tp + fn);

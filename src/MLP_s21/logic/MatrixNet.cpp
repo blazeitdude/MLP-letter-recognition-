@@ -6,11 +6,11 @@
 
 namespace s21 {
 
-void MatrixNet::backPropagation(std::vector<double> &right) {
+void MatrixNet::BackPropagation(std::vector<double> &right) {
   v_double grads;
 
   for (int i = weights.size() - 1; i >= 0; i--) {
-    gradient(grads, right, i + 1);
+    Gradient(grads, right, i + 1);
 
     for (size_t k = 0; k < weights[i].getColumn(); k++) {
       for (size_t j = 0; j < weights[i].getRow(); j++) {
@@ -21,23 +21,23 @@ void MatrixNet::backPropagation(std::vector<double> &right) {
   }
 }
 
-void MatrixNet::forwardFeed() {
+void MatrixNet::ForwardFeed() {
   for (size_t i = 0; i < neurons.size() - 1; i++) {
     neurons[i + 1] = weights[i] * neurons[i];
     for (size_t j = 0; j < neurons[i + 1].getRow(); j++) {
       double pre = neurons[i + 1](j, 0);
-      neurons[i + 1](j, 0) = activateFunction(neurons[i + 1](j, 0) + biases[i]);
+      neurons[i + 1](j, 0) = ActivateFunction(neurons[i + 1](j, 0) + biases[i]);
     }
   }
 }
 
-void MatrixNet::feedInitValues(const v_double &values) {
+void MatrixNet::FeedInitValues(const v_double &values) {
   for (size_t i = 0; i < values.size(); i++) {
     neurons[0][i][0] = values[i];
   }
 }
 
-void MatrixNet::setLayers(std::vector<config> info) {
+void MatrixNet::SetLayers(std::vector<config> info) {
   topology.clear();
   for (int i = 0; i < neurons.size(); i++) {
     neurons[i].clear();
@@ -61,12 +61,12 @@ void MatrixNet::setLayers(std::vector<config> info) {
     biases.emplace_back(0);
     if (i != info.size() - 1) {
       weights.emplace_back(Matrix(info[i + 1], info[i]));
-      initWeights(weights.back());
+      InitWeights(weights.back());
     }
   }
 }
 
-size_t MatrixNet::getResult() {
+size_t MatrixNet::GetResult() {
   size_t result = 0;
   double max = neurons.back()[0][0];
   for (int i = 0; i < neurons.back().getRow(); i++) {
@@ -78,7 +78,7 @@ size_t MatrixNet::getResult() {
   return result;
 }
 
-const v_double MatrixNet::getResVector() {
+const v_double MatrixNet::GetResVector() {
   v_double result(topology.back());
   for (int i = 0; i < result.size(); i++) {
     result[i] = neurons.back()[i][0];
@@ -86,27 +86,27 @@ const v_double MatrixNet::getResVector() {
   return result;
 }
 
-void MatrixNet::initWeights(Matrix &matrix) {
+void MatrixNet::InitWeights(Matrix &matrix) {
   for (size_t i = 0; i < matrix.getRow(); i++) {
     for (size_t j = 0; j < matrix.getColumn(); j++) {
-      double res = randomWeight();
+      double res = RandomWeight();
       matrix(i, j) = res;
     }
   }
 }
 
-double MatrixNet::randomWeight() {
+double MatrixNet::RandomWeight() {
   double ret = ((int)generator() % 10000) * 0.0001;
   return (ret);
 }
 
-void MatrixNet::gradient(std::vector<double> &LocalGrads,
+void MatrixNet::Gradient(std::vector<double> &LocalGrads,
                          const std::vector<double> &ExpectedValues,
                          size_t layer) {
   if (LocalGrads.empty()) {
     for (size_t i = 0; i < neurons.back().getRow(); i++) {
       double error = ExpectedValues[i] - neurons.back()[i][0];
-      LocalGrads.push_back(error * derivate(neurons.back()[i][0]));
+      LocalGrads.push_back(error * Derivate(neurons.back()[i][0]));
     }
   } else {
     // иначе получаем новые градиенты, умножая старые градиенты на веса
@@ -119,13 +119,13 @@ void MatrixNet::gradient(std::vector<double> &LocalGrads,
       for (size_t j = 0; j < weights[layer].getRow(); j++) {
         teta += LocalGrads[j] * weights[layer][j][i];
       }
-      NewGrads.push_back(teta * derivate(neurons[layer][i][0]));
+      NewGrads.push_back(teta * Derivate(neurons[layer][i][0]));
     }
     LocalGrads = NewGrads;
   }
 }
 
-void MatrixNet::saveExperience(std::string path) {
+void MatrixNet::SaveExperience(std::string path) {
   std::fstream file;
 
   file.open(path, std::fstream::out);
@@ -143,7 +143,7 @@ void MatrixNet::saveExperience(std::string path) {
   file.close();
 }
 
-bool MatrixNet::readExperience(std::string path) {
+bool MatrixNet::ReadExperience(std::string path) {
   std::fstream file;
   char buff = 0;
   std::string buff_str = "";
@@ -152,7 +152,7 @@ bool MatrixNet::readExperience(std::string path) {
   file.open(path);
   if (!file.is_open()) return false;
 
-  if (check_file(file)) {
+  if (CheckFile(file)) {
     for (int i = 0; i < topology.size(); i++) {
       for (int j = 0; j < weights[i].getRow(); j++) {
         for (int k = 0; k < weights[i].getColumn(); k++) {

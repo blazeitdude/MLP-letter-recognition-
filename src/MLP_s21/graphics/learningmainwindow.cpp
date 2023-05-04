@@ -14,7 +14,7 @@ LearningMainWindow::LearningMainWindow(QWidget *parent)
 
 LearningMainWindow::~LearningMainWindow() { delete ui; }
 
-void LearningMainWindow::addData(const QString mode,
+void LearningMainWindow::AddData(const QString mode,
                                  const std::vector<double> values) {
   QChart *chart = new QChart();
   QValueAxis *xAxis = new QValueAxis();

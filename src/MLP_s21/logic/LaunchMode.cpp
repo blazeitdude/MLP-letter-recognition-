@@ -8,49 +8,49 @@
 
 namespace s21 {
 
-auto NetInterface::trainMode(const std::string &fileName, const size_t epoch)
+auto NetInterface::TrainMode(const std::string &fileName, const size_t epoch)
     -> v_double {
   Emnist_reader reader;
   v_double error;
 
   for (int i = 0; i < epoch; i++) {
-    reader.connect(fileName);
-    const int ex = reader.getAmount();
+    reader.Connect(fileName);
+    const int ex = reader.GetAmount();
     int accuracy = 0;
     for (int j = 0; j < ex; j++) {
       v_double right(topology.back());
-      Sample sample = reader.getSample();
+      Sample sample = reader.GetSample();
       right[sample.answer - 1] = 1;
-      feedInitValues(sample.pixels);
-      forwardFeed();
-      getResVector();
-      if (sample.answer - 1 == getResult()) accuracy++;
-      backPropagation(right);
+      FeedInitValues(sample.pixels);
+      ForwardFeed();
+      GetResVector();
+      if (sample.answer - 1 == GetResult()) accuracy++;
+      BackPropagation(right);
     }
     accuracy =
         (static_cast<double>(accuracy) / static_cast<double>(ex) * 100.0);
     error.push_back(100.0 - accuracy);
   }
-  reader.disconnect();
+  reader.Disconnect();
   return error;
 }
 
-auto NetInterface::testMode(const std::string &fileName, const double DataCoef)
+auto NetInterface::TestMode(const std::string &fileName, const double DataCoef)
     -> Info {
   Emnist_reader reader;
   Info info;
 
-  reader.connect(fileName);
-  const int usage = static_cast<int>(reader.getAmount() * DataCoef);
+  reader.Connect(fileName);
+  const int usage = static_cast<int>(reader.GetAmount() * DataCoef);
   int tp = 0, fp = 0, tn = 0, fn = 0;
   auto start = std::chrono::high_resolution_clock::now();
   for (int i = 0; i < usage; i++) {
-    Sample sample = reader.getSample();
+    Sample sample = reader.GetSample();
 
-    feedInitValues(sample.pixels);
-    forwardFeed();
-    v_double result = getResVector();
-    int answer = getResult();
+    FeedInitValues(sample.pixels);
+    ForwardFeed();
+    v_double result = GetResVector();
+    int answer = GetResult();
     if (sample.answer - 1 == answer) info.accuracy++;
     for (int j = 0; j < 26; j++) {
       if (j == answer) {
@@ -70,16 +70,16 @@ auto NetInterface::testMode(const std::string &fileName, const double DataCoef)
   auto duration =
       std::chrono::duration_cast<std::chrono::seconds>(stop - start);
   info.ed_time = duration.count();
-  info.calculate(tp, fp, tn, fn, usage);
-  reader.disconnect();
+  info.Calculate(tp, fp, tn, fn, usage);
+  reader.Disconnect();
   return info;
 }
 
-auto NetInterface::validation(const std::string &fileName, const size_t k)
+auto NetInterface::Validation(const std::string &fileName, const size_t k)
     -> std::vector<double> {
   Emnist_reader reader;
-  reader.connect(fileName);
-  const int fileSize = reader.getAmount();
+  reader.Connect(fileName);
+  const int fileSize = reader.GetAmount();
 
   std::vector<Sample> testDataIn;
   v_double accuracyVals;
@@ -93,29 +93,29 @@ auto NetInterface::validation(const std::string &fileName, const size_t k)
     int accuracy = 0;
     for (int iterator = 0; iterator < fileSize; iterator++) {
       if (iterator >= getTest && iterator < endTest) {
-        testDataIn.push_back(reader.getSample());
+        testDataIn.push_back(reader.GetSample());
       } else {
-        data = reader.getSample();
+        data = reader.GetSample();
         expectedVals[data.answer - 1] = 1;
-        this->feedInitValues(data.pixels);
-        this->forwardFeed();
-        this->backPropagation(expectedVals);
+        this->FeedInitValues(data.pixels);
+        this->ForwardFeed();
+        this->BackPropagation(expectedVals);
         expectedVals[data.answer - 1] = 0;
       }
     }
     for (int j = 0; j < testDataIn.size(); j++) {
-      this->feedInitValues(testDataIn[j].pixels);
-      this->forwardFeed();
-      if (this->getResult() == testDataIn[j].answer - 1) accuracy++;
+      this->FeedInitValues(testDataIn[j].pixels);
+      this->ForwardFeed();
+      if (this->GetResult() == testDataIn[j].answer - 1) accuracy++;
     }
     getTest += testDataSize;
     endTest += testDataSize;
 
     testDataIn.clear();
     accuracyVals.push_back(static_cast<double>(accuracy) / testDataSize * 100);
-    if (i != k - 1) reader.connect(fileName);
+    if (i != k - 1) reader.Connect(fileName);
   }
-  reader.disconnect();
+  reader.Disconnect();
   return accuracyVals;
 }
 }  // namespace s21

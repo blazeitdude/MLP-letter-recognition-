@@ -12,24 +12,24 @@ namespace s21 {
 
 class MatrixNet : public NetInterface {
  public:
-  void backPropagation(v_double& right) override;
-  void forwardFeed() override;
-  void feedInitValues(const v_double& values) override;
-  void saveExperience(std::string path) override;
-  bool readExperience(std::string path) override;
-  void setLayers(std::vector<config> info) override;
+  void BackPropagation(v_double& right) override;
+  void ForwardFeed() override;
+  void FeedInitValues(const v_double& values) override;
+  void SaveExperience(std::string path) override;
+  bool ReadExperience(std::string path) override;
+  void SetLayers(std::vector<config> info) override;
 
-  size_t getResult() override;
-  const v_double getResVector() override;
+  size_t GetResult() override;
+  const v_double GetResVector() override;
 
  private:
   std::vector<Matrix> neurons;
   std::vector<Matrix> weights;
   v_double biases;
 
-  void initWeights(Matrix& matrix);
-  double randomWeight();
-  void gradient(v_double& grads, const v_double& expect, size_t layer);
+  void InitWeights(Matrix& matrix);
+  double RandomWeight();
+  void Gradient(v_double& grads, const v_double& expect, size_t layer);
 };
 
 }  // namespace s21

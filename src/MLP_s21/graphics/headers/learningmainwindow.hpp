@@ -14,7 +14,7 @@ class LearningMainWindow : public QDialog {
  public:
   explicit LearningMainWindow(QWidget *parent = nullptr);
   ~LearningMainWindow();
-  void addData(const QString mode, const std::vector<double> values);
+  void AddData(const QString mode, const std::vector<double> values);
 
  private:
   Ui::LearningMainWindow *ui;

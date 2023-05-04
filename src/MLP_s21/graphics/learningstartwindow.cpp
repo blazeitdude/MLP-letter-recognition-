@@ -13,24 +13,24 @@ LearningStartWindow::LearningStartWindow(QWidget *parent)
 
 LearningStartWindow::~LearningStartWindow() { delete ui; }
 
-void LearningStartWindow::setAccuracy(const double accuracy) {
+void LearningStartWindow::SetAccuracy(const double accuracy) {
   ui->accuracyLabel->setText(QString::number(accuracy * 100, 'g', 2) + " %");
 }
 
-void LearningStartWindow::setPrecision(const double presicion) {
+void LearningStartWindow::SetPrecision(const double presicion) {
   ui->precisionLabel->setText(QString::number(presicion * 100, 'g', 2) + " %");
 }
 
-void LearningStartWindow::setRecall(const double recall) {
+void LearningStartWindow::SetRecall(const double recall) {
   ui->recallLabel->setText(QString::number(recall * 100, 'g', 2) + " %");
 }
 
-void LearningStartWindow::setMeasure(const double measure) {
+void LearningStartWindow::SetMeasure(const double measure) {
   ui->measureLabel->setText(QString::number(measure * 100, 'g', 2) + " %");
 }
 
-void LearningStartWindow::setTime(const double time) {
-  ui->timeLabel->setText(QString::number(time * 100, 'g', 2) + " s");
+void LearningStartWindow::SetTime(const double time) {
+  ui->timeLabel->setText(QString::number(time, 'g', 2) + " s");
 }
 
 }  // namespace s21

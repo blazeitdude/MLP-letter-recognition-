@@ -15,11 +15,11 @@ class LearningStartWindow : public QDialog {
  public:
   explicit LearningStartWindow(QWidget *parent = nullptr);
   ~LearningStartWindow();
-  void setAccuracy(const double accuracy);
-  void setPrecision(const double precision);
-  void setRecall(const double recall);
-  void setMeasure(const double measure);
-  void setTime(const double time);
+  void SetAccuracy(const double accuracy);
+  void SetPrecision(const double precision);
+  void SetRecall(const double recall);
+  void SetMeasure(const double measure);
+  void SetTime(const double time);
 
  private:
   Ui::LearningStartWindow *ui;

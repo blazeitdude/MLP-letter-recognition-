@@ -9,12 +9,12 @@ namespace s21 {
 secondWindow::secondWindow(QWidget *parent)
     : QDialog(parent),
       ui(new Ui::secondWindow),
-      start_window(new LearningStartWindow),
-      trainWindow(new LearningMainWindow),
+      _startWindow(new LearningStartWindow),
+      _trainWindow(new LearningMainWindow),
       _controller(new s21::Controller),
       _settingsWindow(new settingsWindow) {
   ui->setupUi(this);
-  ui->draw_widget->setWindow(this);
+  ui->draw_widget->SetWindow(this);
   int idFont =
       QFontDatabase::addApplicationFont(":/MountainsofChristmas-Regular.ttf");
   QString itimCyrillic = QFontDatabase::applicationFontFamilies(idFont).at(0);
@@ -23,37 +23,37 @@ secondWindow::secondWindow(QWidget *parent)
   this->setFont(IC);
   this->setFont(IC);
 
-  _controller->setNeural(s21::NeuralType::MATRIX, defaultLayer);
-  _settingsWindow->setController(_controller);
-  connect(this, &secondWindow::testDone, this, &secondWindow::showTestWin);
-  connect(this, &secondWindow::trainDone, this, &secondWindow::showTrainWin);
+  _controller->SetNeural(s21::NeuralType::MATRIX, defaultLayer);
+  _settingsWindow->SetController(_controller);
+  connect(this, &secondWindow::TestDone, this, &secondWindow::ShowTestWin);
+  connect(this, &secondWindow::TrainDone, this, &secondWindow::ShowTrainWin);
 }
 
 secondWindow::~secondWindow() {
-  delete start_window;
-  delete trainWindow;
+  delete _startWindow;
+  delete _trainWindow;
   delete _settingsWindow;
   delete ui;
 }
 
-void secondWindow::save_image() {
+void secondWindow::SaveImage() {
   QString path = QFileDialog::getSaveFileName(
       ui->draw_widget, tr("Save as BMP image"), "", tr("BMP file (*.bmp)"));
   QImage image;
 
   if (path.isEmpty()) return;
-  image = ui->draw_widget->getImage();
+  image = ui->draw_widget->GetImage();
   image.save(path);
 }
 
-void secondWindow::changeAccept(bool accept) {
+void secondWindow::ChangeAccept(bool accept) {
   if (accept)
     this->setEnabled(true);
   else
     this->setDisabled(true);
 }
 
-auto secondWindow::readPixels(const QImage &image) -> std::vector<double> {
+auto secondWindow::ReadPixels(const QImage &image) -> std::vector<double> {
   const double kmaxColor = 255.0;
   const int pixelSize = 28;
   std::vector<double> image_pixels;
@@ -68,12 +68,12 @@ auto secondWindow::readPixels(const QImage &image) -> std::vector<double> {
   return image_pixels;
 }
 
-void secondWindow::predict() {
-  if (!ui->draw_widget->isClear()) {
-    _controller->initValues(ui->draw_widget->vectorsInImage());
-    _controller->feedForward();
+void secondWindow::Predict() {
+  if (!ui->draw_widget->IsClear()) {
+    _controller->InitValues(ui->draw_widget->VectorsInImage());
+    _controller->FeedForward();
     ui->predictLabel->setText(
-        QString(QChar(static_cast<int>(_controller->getResult()) + asciiBias)));
+        QString(QChar(static_cast<int>(_controller->GetResult()) + asciiBias)));
   } else {
     ui->predictLabel->setText("");
   }
@@ -84,63 +84,63 @@ void secondWindow::on_pushButton_learn_clicked() {
       QFileDialog::getOpenFileName(this, QFileDialog::tr("Open file"),
                                    _emnistPath, QFileDialog::tr("(*.csv)"));
   if (!_filePath.isEmpty()) {
-    changeAccept(false);
+    ChangeAccept(false);
     _thread = std::thread([&]() {
-      if (_settingsWindow->isCrossValid()) {
-        if (_settingsWindow->getKGroups() != 1) {
-          emit trainDone(_controller->validation(
-              _filePath.toStdString(), _settingsWindow->getKGroups()));
+      if (_settingsWindow->IsCrossValid()) {
+        if (_settingsWindow->GetKGroups() != 1) {
+          emit TrainDone(_controller->Validation(
+              _filePath.toStdString(), _settingsWindow->GetKGroups()));
         }
       } else {
-        emit trainDone(_controller->trainModel(_filePath.toStdString(),
-                                               _settingsWindow->getEpochNum()));
+        emit TrainDone(_controller->TrainModel(_filePath.toStdString(),
+                                               _settingsWindow->GetEpochNum()));
       }
-      changeAccept(true);
+      ChangeAccept(true);
     });
     _thread.detach();
   }
 }
 
 void secondWindow::on_pushButton_test_clicked() {
-  if (_settingsWindow->getSelection() != 0) {
+  if (_settingsWindow->GetSelection() != 0) {
     _filePath =
         QFileDialog::getOpenFileName(this, QFileDialog::tr("Open file"),
                                      _emnistPath, QFileDialog::tr("(*.csv)"));
-    changeAccept(false);
+    ChangeAccept(false);
     if (!_filePath.isEmpty()) {
       _thread = std::thread([&]() {
-        _info = _controller->getInfo(_filePath.toStdString(),
-                                     _settingsWindow->getSelection());
-        start_window->setAccuracy(_info.accuracy);
-        start_window->setPrecision(_info.precision);
-        start_window->setRecall(_info.recall);
-        start_window->setMeasure(_info.f_measure);
-        start_window->setTime(_info.ed_time);
-        changeAccept(true);
-        emit testDone();
+        _info = _controller->GetInfo(_filePath.toStdString(),
+                                     _settingsWindow->GetSelection());
+        _startWindow->SetAccuracy(_info.accuracy);
+        _startWindow->SetPrecision(_info.precision);
+        _startWindow->SetRecall(_info.recall);
+        _startWindow->SetMeasure(_info.f_measure);
+        _startWindow->SetTime(_info.ed_time);
+        ChangeAccept(true);
+        emit TestDone();
       });
       _thread.detach();
     }
   }
 }
 
-void secondWindow::showTestWin() { start_window->show(); }
+void secondWindow::ShowTestWin() { _startWindow->show(); }
 
-void secondWindow::showTrainWin(const std::vector<double> &values) {
-  QString labelName = _settingsWindow->isCrossValid() ? "K-GROUPS" : "EPOCH";
-  trainWindow->addData(labelName, values);
-  trainWindow->show();
+void secondWindow::ShowTrainWin(const std::vector<double> &values) {
+  QString labelName = _settingsWindow->IsCrossValid() ? "K-GROUPS" : "EPOCH";
+  _trainWindow->AddData(labelName, values);
+  _trainWindow->show();
 }
 
-void secondWindow::on_saveImageButton_clicked() { save_image(); }
+void secondWindow::on_saveImageButton_clicked() { SaveImage(); }
 
 void secondWindow::on_uploadImageButton_clicked() {
   QString path = QFileDialog::getOpenFileName(this, "File Selection", "",
                                               tr("BMP file (*.bmp)"));
 
   if (path.isEmpty()) return;
-  ui->draw_widget->setImage(path);
-  predict();
+  ui->draw_widget->SetImage(path);
+  Predict();
 }
 
 void secondWindow::on_saveWeightsButton_clicked() {
@@ -151,8 +151,8 @@ void secondWindow::on_saveWeightsButton_clicked() {
       "/";
   if (!_filePath.isEmpty()) {
     _fileName = _filePath + "weights_" +
-                QString::number((_settingsWindow->getLayersNum()));
-    _controller->saveWeights(_fileName.toStdString() + ".txt");
+                QString::number((_settingsWindow->GetLayersNum()));
+    _controller->SaveWeights(_fileName.toStdString() + ".txt");
   }
 }
 
@@ -161,7 +161,7 @@ void secondWindow::on_uploadWeightsButton_clicked() {
       QFileDialog::getOpenFileName(this, QFileDialog::tr("Open file"),
                                    _weightsPath, QFileDialog::tr("(*.txt)"));
   if (!_filePath.isEmpty()) {
-    _controller->loadWeights(_filePath.toStdString());
+    _controller->LoadWeights(_filePath.toStdString());
   }
 }
 

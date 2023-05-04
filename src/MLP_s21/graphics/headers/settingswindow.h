@@ -20,12 +20,12 @@ class settingsWindow : public QDialog {
   explicit settingsWindow(QWidget* parent = nullptr);
   ~settingsWindow();
 
-  int getLayersNum();
-  void setController(s21::Controller* controller);
-  double getSelection();
-  size_t getEpochNum();
-  bool isCrossValid();
-  size_t getKGroups();
+  int GetLayersNum();
+  void SetController(s21::Controller* controller);
+  double GetSelection();
+  size_t GetEpochNum();
+  bool IsCrossValid();
+  size_t GetKGroups();
 
  private slots:
   void on_crossValidationCheck_stateChanged(int arg1);

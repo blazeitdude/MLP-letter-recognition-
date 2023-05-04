@@ -25,11 +25,11 @@ class Sample {
 };
 class Emnist_reader {
  public:
-  auto connect(std::string path) -> void;
-  auto isOpen() -> bool;
-  auto disconnect() -> void;
-  auto getSample() -> Sample;
-  auto getAmount() -> int;
+  auto Connect(std::string path) -> void;
+  auto IsOpen() -> bool;
+  auto Disconnect() -> void;
+  auto GetSample() -> Sample;
+  auto GetAmount() -> int;
 
  private:
   std::fstream file;

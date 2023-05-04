@@ -25,19 +25,19 @@ class secondWindow : public QDialog {
  public:
   explicit secondWindow(QWidget* parent = nullptr);
   ~secondWindow();
-  void changeAccept(bool accept);
-  void predict();
+  void ChangeAccept(bool accept);
+  void Predict();
 
-  auto readPixels(const QImage& image) -> std::vector<double>;
-  void save_image();
+  auto ReadPixels(const QImage& image) -> std::vector<double>;
+  void SaveImage();
 
  private slots:
 
   void on_pushButton_learn_clicked();
 
   void on_pushButton_test_clicked();
-  void showTestWin();
-  void showTrainWin(const std::vector<double>& values);
+  void ShowTestWin();
+  void ShowTrainWin(const std::vector<double>& values);
 
   void on_saveImageButton_clicked();
 
@@ -50,13 +50,13 @@ class secondWindow : public QDialog {
   void on_settingsPushButton_clicked();
 
  signals:
-  void testDone();
-  void trainDone(const std::vector<double>& values);
+  void TestDone();
+  void TrainDone(const std::vector<double>& values);
 
  private:
   Ui::secondWindow* ui;
-  LearningStartWindow* start_window;
-  LearningMainWindow* trainWindow;
+  LearningStartWindow* _startWindow;
+  LearningMainWindow* _trainWindow;
   settingsWindow* _settingsWindow;
   s21::Controller* _controller;
   QString _filePath;

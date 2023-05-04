@@ -9,8 +9,8 @@
 
 TEST(readModel, ReadFile) {
   s21::Emnist_reader reader;
-  reader.connect("./logic/tests/letterA.txt");
-  s21::Sample sample = reader.getSample();
+  reader.Connect("./logic/tests/letterA.txt");
+  s21::Sample sample = reader.GetSample();
   std::vector<double> input = {
       1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -74,8 +74,8 @@ TEST(readModel, ReadFile) {
 TEST(matrixNetwork, checkAnswerOne) {
   s21::NetInterface* neural = new s21::MatrixNet();
 
-  neural->setLayers(neural->getLayersVect(5));
-  neural->readExperience("./weights/weights_5.txt");
+  neural->SetLayers(neural->GetLayersVect(5));
+  neural->ReadExperience("./weights/weights_5.txt");
 
   std::vector<double> input = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -131,17 +131,17 @@ TEST(matrixNetwork, checkAnswerOne) {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0};
-  neural->feedInitValues(input);
-  neural->forwardFeed();
+  neural->FeedInitValues(input);
+  neural->ForwardFeed();
 
-  ASSERT_EQ(neural->getResult() + 65, 'K');
+  ASSERT_EQ(neural->GetResult() + 65, 'K');
 }
 
 TEST(matrixNetwork, checkAnswerTwo) {
   s21::NetInterface* neural = new s21::MatrixNet();
 
-  neural->setLayers(neural->getLayersVect(5));
-  neural->readExperience("./weights/weights_5.txt");
+  neural->SetLayers(neural->GetLayersVect(5));
+  neural->ReadExperience("./weights/weights_5.txt");
 
   std::vector<double> input = {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -198,9 +198,9 @@ TEST(matrixNetwork, checkAnswerTwo) {
       0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0};
 
-  neural->feedInitValues(input);
-  neural->forwardFeed();
-  ASSERT_EQ(neural->getResult() + 65, 'C');
+  neural->FeedInitValues(input);
+  neural->ForwardFeed();
+  ASSERT_EQ(neural->GetResult() + 65, 'C');
 }
 
 int main(int argc, char* argv[]) {

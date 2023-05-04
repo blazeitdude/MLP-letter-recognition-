@@ -8,7 +8,7 @@ PaintScene::PaintScene(QWidget *parent)
     : QWidget(parent),
       _image(QSize(512, 512), QImage::Format_RGB16),
       _drag(false) {
-  clearImage();
+  ClearImage();
 }
 
 void PaintScene::mousePressEvent(QMouseEvent *event) {
@@ -16,22 +16,22 @@ void PaintScene::mousePressEvent(QMouseEvent *event) {
     _lastPoint = event->pos();
     _drag = true;
   } else {
-    clearImage();
+    ClearImage();
   }
 }
 
 void PaintScene::mouseMoveEvent(QMouseEvent *event) {
   if ((event->buttons() & Qt::LeftButton) && _drag) {
-    draw(event->pos());
+    Draw(event->pos());
   }
 }
 
 void PaintScene::mouseReleaseEvent(QMouseEvent *event) {
   if (event->button() == Qt::LeftButton && _drag) {
-    draw(event->pos());
+    Draw(event->pos());
     _drag = false;
   }
-  secondWin->predict();
+  secondWin->Predict();
 }
 
 void PaintScene::paintEvent(QPaintEvent *event) {
@@ -40,7 +40,7 @@ void PaintScene::paintEvent(QPaintEvent *event) {
   painter.drawImage(rect, _image, rect);
 }
 
-void PaintScene::draw(const QPoint &point) {
+void PaintScene::Draw(const QPoint &point) {
   QPainter painter(&_image);
   painter.setPen(
       QPen(Qt::black, lineWidth, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
@@ -54,20 +54,20 @@ void PaintScene::draw(const QPoint &point) {
   _lastPoint = point;
 }
 
-void PaintScene::clearImage() {
+void PaintScene::ClearImage() {
   _image.fill(qRgb(0xFF, 0xFF, 0xFF));
   update();
 }
 
-const QImage &PaintScene::getImage() { return _image; }
+const QImage &PaintScene::GetImage() { return _image; }
 
-void PaintScene::setImage(const QString &filePath) {
-  clearImage();
+void PaintScene::SetImage(const QString &filePath) {
+  ClearImage();
   _image.load(filePath);
   update();
 }
 
-bool PaintScene::isClear() {
+bool PaintScene::IsClear() {
   for (int i = 0; i < _image.width(); ++i) {
     for (int j = 0; j < _image.height(); ++j) {
       if (_image.pixelColor(i, j).blackF() != 0.f) {
@@ -78,9 +78,9 @@ bool PaintScene::isClear() {
   return true;
 }
 
-void PaintScene::setWindow(secondWindow *win) { secondWin = win; }
+void PaintScene::SetWindow(secondWindow *win) { secondWin = win; }
 
-const std::vector<double> &PaintScene::vectorsInImage() {
+const std::vector<double> &PaintScene::VectorsInImage() {
   if (!_pixelVec.empty()) {
     _pixelVec.clear();
   }

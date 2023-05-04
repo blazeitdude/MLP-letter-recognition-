@@ -8,9 +8,9 @@ namespace s21 {
 Sample::Sample(const v_double &pixels, const int answer)
     : pixels(pixels), answer(answer) {}
 
-auto Emnist_reader::isOpen() -> bool { return file.is_open(); }
+auto Emnist_reader::IsOpen() -> bool { return file.is_open(); }
 
-auto Emnist_reader::connect(std::string path) -> void {
+auto Emnist_reader::Connect(std::string path) -> void {
   this->amount = 0;
   file.close();
   file.open(path);
@@ -27,11 +27,11 @@ auto Emnist_reader::connect(std::string path) -> void {
     throw std::invalid_argument("Error: Unable to open file");
 }
 
-auto Emnist_reader::disconnect() -> void {
-  if (isOpen()) file.close();
+auto Emnist_reader::Disconnect() -> void {
+  if (IsOpen()) file.close();
 }
 
-auto Emnist_reader::getSample() -> Sample {
+auto Emnist_reader::GetSample() -> Sample {
   int answer;
   std::string temp;
   char buff = 0;
@@ -61,5 +61,5 @@ auto Emnist_reader::getSample() -> Sample {
   return (Sample(result, answer));
 }
 
-auto Emnist_reader::getAmount() -> int { return (amount); }
+auto Emnist_reader::GetAmount() -> int { return (amount); }
 }  // namespace s21

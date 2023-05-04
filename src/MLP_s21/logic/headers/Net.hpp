@@ -30,35 +30,35 @@ class Info {
   double f_measure;
   double ed_time;
 
-  auto calculate(int tp, int fp, int tn, int fn, int dataSize) -> void;
+  auto Calculate(int tp, int fp, int tn, int fn, int dataSize) -> void;
   Info();
 };
 
 class NetInterface {
  protected:
-  bool check_file(std::fstream& file);
+  bool CheckFile(std::fstream& file);
   std::vector<size_t> topology;
   std::mt19937 generator;
 
  public:
   NetInterface() = default;
   virtual ~NetInterface() = default;
-  virtual void backPropagation(v_double& right) = 0;
-  virtual void forwardFeed() = 0;
-  virtual void feedInitValues(const v_double& values) = 0;
-  virtual void saveExperience(std::string path) = 0;
-  virtual bool readExperience(std::string path) = 0;
-  virtual void setLayers(std::vector<config> info) = 0;
-  v_double trainMode(const std::string& fileName, const size_t epoch);
-  Info testMode(const std::string& fileName, const double DataCoef);
-  static double activateFunction(double res);
-  static double derivate(double res);
+  virtual void BackPropagation(v_double& right) = 0;
+  virtual void ForwardFeed() = 0;
+  virtual void FeedInitValues(const v_double& values) = 0;
+  virtual void SaveExperience(std::string path) = 0;
+  virtual bool ReadExperience(std::string path) = 0;
+  virtual void SetLayers(std::vector<config> info) = 0;
+  v_double TrainMode(const std::string& fileName, const size_t epoch);
+  Info TestMode(const std::string& fileName, const double DataCoef);
+  static double ActivateFunction(double res);
+  static double Derivate(double res);
 
-  std::vector<config> getLayersConfig(size_t n);
-  virtual size_t getResult() = 0;
-  virtual const v_double getResVector() = 0;
-  auto getLayersVect(int number) const -> std::vector<config>;
-  auto validation(const std::string& fileName, const size_t k)
+  std::vector<config> GetLayersConfig(size_t n);
+  virtual size_t GetResult() = 0;
+  virtual const v_double GetResVector() = 0;
+  auto GetLayersVect(int number) const -> std::vector<config>;
+  auto Validation(const std::string& fileName, const size_t k)
       -> std::vector<double>;
 };
 
